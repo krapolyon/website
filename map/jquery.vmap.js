@@ -1,5 +1,5 @@
 /*!
- * jQVMap Version 1.0 
+ * jQVMap Version 1.0
  *
  * http://jqvmap.com
  *
@@ -39,7 +39,7 @@
       backgroundColor: '#a5bfdd',
       color: '#f4f3f0',
       hoverColor: '#c9dfaf',
-	  selectedColor: '#c9dfaf',
+      selectedColor: '#c9dfaf',
       scaleColors: ['#b6d6ff', '#005ace'],
       normalizeFunction: 'linear',
       enableZoom: true,
@@ -63,7 +63,7 @@
       $.extend(defaultParams, options);
       defaultParams.container = this;
       this.css({ position: 'relative', overflow: 'hidden' });
-	  
+
       map = new WorldMap(defaultParams);
 
       this.data('mapObject', map);
@@ -81,7 +81,7 @@
   var VectorCanvas = function (width, height, params)
   {
     this.mode = window.SVGAngle ? 'svg' : 'vml';
-	this.params = params;
+    this.params = params;
 
     if (this.mode == 'svg')
     {
@@ -190,10 +190,10 @@
         node.setFill = function (color)
         {
           this.setAttribute("fill", color);
-		  if(this.getAttribute("original") === null)
-		  {
-		  	this.setAttribute("original", color);
-		  }
+          if(this.getAttribute("original") === null)
+          {
+            this.setAttribute("original", color);
+          }
         };
 
         node.getFill = function (color)
@@ -203,9 +203,9 @@
 
         node.getOriginalFill = function ()
         {
-		  return this.getAttribute("original");
+          return this.getAttribute("original");
         };
-		
+
         node.setOpacity = function (opacity)
         {
           this.setAttribute('fill-opacity', opacity);
@@ -295,114 +295,114 @@
     var cx = 0, cy = 0, ctrlx, ctrly;
 
     return path.replace(/([MmLlHhVvCcSs])((?:-?(?:\d+)?(?:\.\d+)?,?\s?)+)/g, function (segment, letter, coords, index)
-    {
-      coords = coords.replace(/(\d)-/g, '$1,-').replace(/\s+/g, ',').split(',');
-      if (!coords[0])
       {
-        coords.shift();
-      }
+        coords = coords.replace(/(\d)-/g, '$1,-').replace(/\s+/g, ',').split(',');
+        if (!coords[0])
+        {
+          coords.shift();
+        }
 
-      for (var i = 0, l = coords.length; i < l; i++)
-      {
-        coords[i] = Math.round(100 * coords[i]);
-      }
+        for (var i = 0, l = coords.length; i < l; i++)
+        {
+          coords[i] = Math.round(100 * coords[i]);
+        }
 
-      switch (letter)
-      {
-        case 'm':
-          cx += coords[0];
-          cy += coords[1];
-          return 't' + coords.join(',');
-          break;
+        switch (letter)
+        {
+          case 'm':
+            cx += coords[0];
+            cy += coords[1];
+            return 't' + coords.join(',');
+            break;
 
-        case 'M':
-          cx = coords[0];
-          cy = coords[1];
-          return 'm' + coords.join(',');
-          break;
+          case 'M':
+            cx = coords[0];
+            cy = coords[1];
+            return 'm' + coords.join(',');
+            break;
 
-        case 'l':
-          cx += coords[0];
-          cy += coords[1];
-          return 'r' + coords.join(',');
-          break;
+          case 'l':
+            cx += coords[0];
+            cy += coords[1];
+            return 'r' + coords.join(',');
+            break;
 
-        case 'L':
-          cx = coords[0];
-          cy = coords[1];
-          return 'l' + coords.join(',');
-          break;
+          case 'L':
+            cx = coords[0];
+            cy = coords[1];
+            return 'l' + coords.join(',');
+            break;
 
-        case 'h':
-          cx += coords[0];
-          return 'r' + coords[0] + ',0';
-          break;
+          case 'h':
+            cx += coords[0];
+            return 'r' + coords[0] + ',0';
+            break;
 
-        case 'H':
-          cx = coords[0];
-          return 'l' + cx + ',' + cy;
-          break;
+          case 'H':
+            cx = coords[0];
+            return 'l' + cx + ',' + cy;
+            break;
 
-        case 'v':
-          cy += coords[0];
-          return 'r0,' + coords[0];
-          break;
+          case 'v':
+            cy += coords[0];
+            return 'r0,' + coords[0];
+            break;
 
-        case 'V':
-          cy = coords[0];
-          return 'l' + cx + ',' + cy;
-          break;
+          case 'V':
+            cy = coords[0];
+            return 'l' + cx + ',' + cy;
+            break;
 
-        case 'c':
-          ctrlx = cx + coords[coords.length - 4];
-          ctrly = cy + coords[coords.length - 3];
-          cx += coords[coords.length - 2];
-          cy += coords[coords.length - 1];
-          return 'v' + coords.join(',');
-          break;
+          case 'c':
+            ctrlx = cx + coords[coords.length - 4];
+            ctrly = cy + coords[coords.length - 3];
+            cx += coords[coords.length - 2];
+            cy += coords[coords.length - 1];
+            return 'v' + coords.join(',');
+            break;
 
-        case 'C':
-          ctrlx = coords[coords.length - 4];
-          ctrly = coords[coords.length - 3];
-          cx = coords[coords.length - 2];
-          cy = coords[coords.length - 1];
-          return 'c' + coords.join(',');
-          break;
+          case 'C':
+            ctrlx = coords[coords.length - 4];
+            ctrly = coords[coords.length - 3];
+            cx = coords[coords.length - 2];
+            cy = coords[coords.length - 1];
+            return 'c' + coords.join(',');
+            break;
 
-        case 's':
-          coords.unshift(cy - ctrly);
-          coords.unshift(cx - ctrlx);
-          ctrlx = cx + coords[coords.length - 4];
-          ctrly = cy + coords[coords.length - 3];
-          cx += coords[coords.length - 2];
-          cy += coords[coords.length - 1];
-          return 'v' + coords.join(',');
-          break;
+          case 's':
+            coords.unshift(cy - ctrly);
+            coords.unshift(cx - ctrlx);
+            ctrlx = cx + coords[coords.length - 4];
+            ctrly = cy + coords[coords.length - 3];
+            cx += coords[coords.length - 2];
+            cy += coords[coords.length - 1];
+            return 'v' + coords.join(',');
+            break;
 
-        case 'S':
-          coords.unshift(cy + cy - ctrly);
-          coords.unshift(cx + cx - ctrlx);
-          ctrlx = coords[coords.length - 4];
-          ctrly = coords[coords.length - 3];
-          cx = coords[coords.length - 2];
-          cy = coords[coords.length - 1];
-          return 'c' + coords.join(',');
-          break;
-		  
-		default:
-		  return false;
-		  break;
-      }
+          case 'S':
+            coords.unshift(cy + cy - ctrly);
+            coords.unshift(cx + cx - ctrlx);
+            ctrlx = coords[coords.length - 4];
+            ctrly = coords[coords.length - 3];
+            cx = coords[coords.length - 2];
+            cy = coords[coords.length - 1];
+            return 'c' + coords.join(',');
+            break;
 
-      return '';
+          default:
+            return false;
+            break;
+        }
 
-    }).replace(/z/g, '');
+        return '';
+
+      }).replace(/z/g, '');
   };
 
   var WorldMap = function (params)
   {
     params = params || {};
-	var map = this;
+    var map = this;
     var mapData = WorldMap.maps[params.map];
 
     this.container = params.container;
@@ -420,13 +420,13 @@
     this.resize();
 
     jQuery(window).resize(function ()
-    {
-      map.width = params.container.width();
-      map.height = params.container.height();
-      map.resize();
-      map.canvas.setSize(map.width, map.height);
-      map.applyTransform();
-    });
+      {
+        map.width = params.container.width();
+        map.height = params.container.height();
+        map.resize();
+        map.canvas.setSize(map.width, map.height);
+        map.applyTransform();
+      });
 
     this.canvas = new VectorCanvas(this.width, this.height, params);
     params.container.append(this.canvas.canvas);
@@ -443,19 +443,19 @@
       jQuery('<div/>').addClass('jqvmap-zoomin').text('+').appendTo(params.container);
       jQuery('<div/>').addClass('jqvmap-zoomout').html('&#x2212;').appendTo(params.container);
     }
-	
-	map.countries = [];
-	
+
+    map.countries = [];
+
     for (var key in mapData.pathes)
     {
       var path = this.canvas.createPath({
         path: mapData.pathes[key].path
       });
-	  
+
       path.setFill(this.color);
       path.id = 'jqvmap' + map.index + '_' + key;
       map.countries[key] = path;
-	  
+
       jQuery(this.rootGroup).append(path);
 
       path.setAttribute('class', 'jqvmap-region');
@@ -471,9 +471,9 @@
 
     jQuery(params.container).delegate(this.canvas.mode == 'svg' ? 'path' : 'shape', 'mouseover mouseout', function (e){
       var path = e.target,
-      code = e.target.id.split('_').pop(),
-      labelShowEvent = $.Event('labelShow.jqvmap'),
-      regionMouseOverEvent = $.Event('regionMouseOver.jqvmap');
+        code = e.target.id.split('_').pop(),
+        labelShowEvent = $.Event('labelShow.jqvmap'),
+        regionMouseOverEvent = $.Event('regionMouseOver.jqvmap');
 
       if (e.type == 'mouseover')
       {
@@ -518,9 +518,9 @@
 
     jQuery(params.container).delegate(this.canvas.mode == 'svg' ? 'path' : 'shape', 'click', function (e){
 
-	  for (var key in mapData.pathes)
+      for (var key in mapData.pathes)
       {
-		map.countries[key].currentFillColor = map.countries[key].getOriginalFill();
+        map.countries[key].currentFillColor = map.countries[key].getOriginalFill();
         map.countries[key].setFill(map.countries[key].getOriginalFill());
       }
 
@@ -529,7 +529,7 @@
 
       jQuery(params.container).trigger('regionClick.jqvmap', [code, mapData.pathes[code].name]);
 
-	  path.currentFillColor = params.selectedColor;
+      path.currentFillColor = params.selectedColor;
       path.setFill(params.selectedColor);
 
     });
@@ -587,7 +587,7 @@
       if (typeof key == 'string')
       {
         this.countries[key].setFill(color);
-  	  	this.countries[key].setAttribute("original", color);
+        this.countries[key].setAttribute("original", color);
       }
       else
       {
@@ -598,7 +598,7 @@
           if (this.countries[code])
           {
             this.countries[code].setFill(colors[code]);
-			this.countries[code].setAttribute("original", colors[code]);
+            this.countries[code].setAttribute("original", colors[code]);
           }
         }
       }
@@ -607,8 +607,8 @@
     setValues: function (values)
     {
       var max = 0,
-      min = Number.MAX_VALUE,
-      val;
+        min = Number.MAX_VALUE,
+        val;
 
       for (var cc in values)
       {
@@ -790,37 +790,37 @@
       var sliderDelta = (jQuery('#zoom').innerHeight() - 6 * 2 - 15 * 2 - 3 * 2 - 7 - 6) / (this.zoomMaxStep - this.zoomCurStep);
 
       this.container.find('.jqvmap-zoomin').click(function ()
-      {
-        if (map.zoomCurStep < map.zoomMaxStep)
         {
-          var curTransX = map.transX;
-          var curTransY = map.transY;
-          var curScale = map.scale;
+          if (map.zoomCurStep < map.zoomMaxStep)
+          {
+            var curTransX = map.transX;
+            var curTransY = map.transY;
+            var curScale = map.scale;
 
-          map.transX -= (map.width / map.scale - map.width / (map.scale * map.zoomStep)) / 2;
-          map.transY -= (map.height / map.scale - map.height / (map.scale * map.zoomStep)) / 2;
-          map.setScale(map.scale * map.zoomStep);
-          map.zoomCurStep++;
+            map.transX -= (map.width / map.scale - map.width / (map.scale * map.zoomStep)) / 2;
+            map.transY -= (map.height / map.scale - map.height / (map.scale * map.zoomStep)) / 2;
+            map.setScale(map.scale * map.zoomStep);
+            map.zoomCurStep++;
 
-          jQuery('#zoomSlider').css('top', parseInt(jQuery('#zoomSlider').css('top'), 10) - sliderDelta);
-        }
-      });
+            jQuery('#zoomSlider').css('top', parseInt(jQuery('#zoomSlider').css('top'), 10) - sliderDelta);
+          }
+        });
 
       this.container.find('.jqvmap-zoomout').click(function ()
-      {
-        if (map.zoomCurStep > 1) {
-          var curTransX = map.transX;
-          var curTransY = map.transY;
-          var curScale = map.scale;
+        {
+          if (map.zoomCurStep > 1) {
+            var curTransX = map.transX;
+            var curTransY = map.transY;
+            var curScale = map.scale;
 
-          map.transX += (map.width / (map.scale / map.zoomStep) - map.width / map.scale) / 2;
-          map.transY += (map.height / (map.scale / map.zoomStep) - map.height / map.scale) / 2;
-          map.setScale(map.scale / map.zoomStep);
-          map.zoomCurStep--;
+            map.transX += (map.width / (map.scale / map.zoomStep) - map.width / map.scale) / 2;
+            map.transY += (map.height / (map.scale / map.zoomStep) - map.height / map.scale) / 2;
+            map.setScale(map.scale / map.zoomStep);
+            map.zoomCurStep--;
 
-          jQuery('#zoomSlider').css('top', parseInt(jQuery('#zoomSlider').css('top'), 10) + sliderDelta);
-        }
-      });
+            jQuery('#zoomSlider').css('top', parseInt(jQuery('#zoomSlider').css('top'), 10) + sliderDelta);
+          }
+        });
     },
 
     setScale: function (scale)

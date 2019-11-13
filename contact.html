@@ -1,101 +1,89 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-    <head>
-	        <meta charset="utf-8">
-		        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		        <title>Fanfare Krapô</title>
-		
-		        <!-- Meta Tags -->
-        
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Fanfare Krapô</title>
+
+    <!-- Meta Tags -->
     <meta name="description" content="Fanfare Krapo - La fanfare amphibienne aquatique nocturne - ">
     <meta name="keywords" content="fanfare, musique, lyon, groupe">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet"
-              href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/style_global.css">
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+    <meta charset="UTF-8">
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="vomix/jquery.raptorize.1.0.js"></script>
+    <script>
+      $( document ).ready(function() {
+        $("#vomix").raptorize();
+      });
+    </script>
+  </head>
 
-        <link rel="stylesheet" href="css/contact.css">
-        <link rel="stylesheet" href="css/style_global.css">
-        <link rel="stylesheet" href="css/simple-sidebar.css">
-        <meta charset="UTF-8">
-        <script src="js/jquery-1.11.2.min.js"></script>
-        <script src="vomix/jquery.raptorize.1.0.js"></script>
-        <script>
-
-            $( document ).ready(function() {
-                $("#vomix").raptorize();
-            });
-        </script>
-    </head>
-
-    <body>
-        <div id="wrapper">
-            <div id="sidebar-wrapper">			
-                <ul class="sidebar-nav">
-				<li><a href="index.html"><img src="img/krapo.png"/></a></li>
-                    <!--li><a href="event.html">Evenements</a></li-->  
-                    <li><a href="repertoire.html">Répertoire</a></li>
-                    <li><a href="presta.html">Prestations</a></li>
-                    <!--li><a href="trombi.html">Trombi</a></li-->        
-					<li><a href="contact.html">Contact</a></li>					
-                    <li><a href="copains.html">Copains</a></li>
-                    <li><a href="#" id="vomix">Ne Pas Cliquer</a></li>
-					<li class="container-fluid" style="width:auto;">
-						<a class="col-lg-6" href="https://www.facebook.com/LesKrapos/">
-							<img class="logos" src="/img/facebook.png"/>
-						</a>
-						<a class="col-lg-6" href="https://www.youtube.com/user/fanfarekrapo">
-							<img class="logos" src="/img/youtube.png"/>
-						</a>
-					</li> 
-                </ul>
+  <body>
+    <div id="wrapper">
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li><a href="index.html"><img src="img/krapo.png"/></a></li>
+          <!--li><a href="event.html">Evenements</a></li-->
+          <li><a href="repertoire.html">Répertoire</a></li>
+          <li><a href="presta.html">Prestations</a></li>
+          <!--li><a href="trombi.html">Trombi</a></li-->
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="copains.html">Copains</a></li>
+          <li><a href="#" id="vomix">Ne Pas Cliquer</a></li>
+          <li class="container-fluid" style="width:auto;">
+            <a class="col-lg-6" href="https://www.facebook.com/LesKrapos/">
+              <img class="logos" src="/img/facebook.png"/>
+            </a>
+            <a class="col-lg-6" href="https://www.youtube.com/user/fanfarekrapo">
+              <img class="logos" src="/img/youtube.png"/>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <h3>Vous souhaitez que cette fantastique fanfare intervienne
+              dans votre région, dans votre village ou dans votre salon ?
+              N'hésitez plus et écrivez nous un mail auquel nous ne manquerons pas de répondre !!</h3>
+            <div class ="col-lg-6">
+              <form name="contactform" method="post" action="send_email_form.php">
+                <label for="first_name">Prénom</label>
+                <input  type="text" name="first_name" maxlength="50" size="30">
+                <label for="last_name">Nom</label>
+                <input  type="text" name="last_name" maxlength="50" size="30">
+                <label for="email">Adresse Mail (obligatoire)</label>
+                <input  type="text" name="email" maxlength="80" size="30">
+                <label for="telephone">Numéro de Téléphone (ça serait bien)</label>
+                <input  type="text" name="telephone" maxlength="30" size="30">
+                <label for="comments">Message (obligatoire)</label>
+                <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+                <input id="envoyer" type="submit" value="Envoyer">
+              </form>
             </div>
-
-            <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <div class="row">
-					
-                        <h3>Vous souhaitez que cette fantastique fanfare intervienne 
-						dans votre région, dans votre village ou dans votre salon ? 
-						N'hésitez plus et écrivez nous un mail auquel nous ne manquerons pas de répondre !!</h3>
-						
-						
-						<div class ="col-lg-6">
-
-                        <form name="contactform" method="post" action="send_email_form.php">
-                            <label for="first_name">Prénom</label>
-                            <input  type="text" name="first_name" maxlength="50" size="30">
-                            <label for="last_name">Nom</label>
-                            <input  type="text" name="last_name" maxlength="50" size="30">
-                            <label for="email">Adresse Mail (obligatoire)</label>
-                            <input  type="text" name="email" maxlength="80" size="30">
-                            <label for="telephone">Numéro de Téléphone (ça serait bien)</label>
-                            <input  type="text" name="telephone" maxlength="30" size="30">
-                            <label for="comments">Message (obligatoire)</label>
-                            <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
-                            <input id="envoyer" type="submit" value="Envoyer">
-                        </form>
-						</div>
-						<div class ="col-lg-6" style="padding-top:10%;">
-
-                        <h4>Si vous préférez entendre nos douces voix, appelez les membres du bureau par téléphone :</h4>
-                        <div class="phonenumbers">
-                            <h4><span class = "mark">Perrine</span>, présidente, au <span class = "mark">06 77 26 68 42</span></h4>
-                        </div>
-                        <div class="phonenumbers">
-                            <h4><span class = "mark">Debs</span>, secrétaire, au <span class = "mark">06 78 89 70 87</span></h4>
-                        </div>
-                        <div class="phonenumbers">
-                            <h4><span class = "mark">Paul</span>, trésorier, au <span class = "mark">06 18 10 21 05</span></h4>
-                        </div>
-						
-						<h4>Et si aucune des solutions ci-dessus ne vous convient, envoyez nous un mail à cette adresse : <span class = "mark">fanfare.krapo@gmail.com</span></h4>
-						</div>
-					</div>
-					
-                </div>
+            <div class ="col-lg-6" style="padding-top:10%;">
+              <h4>Si vous préférez entendre nos douces voix, appelez les membres du bureau par téléphone :</h4>
+              <div class="phonenumbers">
+                <h4><span class = "mark">Perrine</span>, présidente, au <span class = "mark">06 77 26 68 42</span></h4>
+              </div>
+              <div class="phonenumbers">
+                <h4><span class = "mark">Debs</span>, secrétaire, au <span class = "mark">06 78 89 70 87</span></h4>
+              </div>
+              <div class="phonenumbers">
+                <h4><span class = "mark">Paul</span>, trésorier, au <span class = "mark">06 18 10 21 05</span></h4>
+              </div>
+              <h4>Et si aucune des solutions ci-dessus ne vous convient, envoyez nous un mail à cette adresse : <span class = "mark">fanfare.krapo@gmail.com</span></h4>
             </div>
+          </div>
         </div>
-    </body>
+      </div>
+    </div>
+  </body>
 </html>
