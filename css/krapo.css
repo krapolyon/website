@@ -1,0 +1,73 @@
+#kraposli%;{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    height:auto;
+}
+
+#album_live{
+	height:40%;
+}
+
+#name{
+    padding-top:20px;
+}
+
+
+.logos{
+	height:1.5em; !important
+}
+
+.slides {
+    display:none;
+}
+
+ul {
+    margin-left: 20px;
+    padding: 0;
+}
+
+ul li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul.horizontal li {
+    display: inline;
+}
+
+.header {
+    background: #999; /* for non-css3 browsers */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#546343', endColorstr='#C7EA9E'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#546343), to(#C7EA9E)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #546343,  #C7EA9E); /* for firefox 3.6+ */
+}
+
+img.center {
+    display: block;
+    margin:auto;
+}
+
+.main {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: right;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+p {
+    text-align: justify;
+    margin-left: 20px;
+}

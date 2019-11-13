@@ -1,0 +1,28 @@
+#francemap{
+    margin: 20px auto;
+}
+
+.copains_logo img{
+    height : 150px;
+    width:auto;
+
+}
+
+h2{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.up img{
+    margin-left: 10px;
+    height:30px;
+}
+
+#logocontainer{
+    padding:50px;
+}
+
+
+#logocontainer *{
+    margin 10px;
+}
