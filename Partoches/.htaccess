@@ -1,0 +1,5 @@
+
+PerlSetVar AuthFile hey/passwd
+AuthName "INDICE: Les krapos jouent au jeu des 1000 euros... LE TOUT EN MINUSCULES, PAS BESOIN DE CRIER"
+AuthType Basic
+require valid-user
