@@ -6,6 +6,9 @@ $(document).ready(function() {
     hoverColor: false,
     backgroundColor: "#ffffff",
     color: "#ED1C82",
+    colors: {
+      "FR-69": '#a21100'
+      },
     borderColor: "#000000",
     selectedColor: "#FF3EA4",
     enableZoom: true,
