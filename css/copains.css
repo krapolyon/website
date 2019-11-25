@@ -18,6 +18,14 @@ h2{
     height:30px;
 }
 
+.map-row {
+    margin: 0 0 0 10%
+}
+
+.map-row p{
+    margin: 20px 0 5px 0;
+}
+
 #logocontainer{
     padding:50px;
 }
