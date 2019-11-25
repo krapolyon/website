@@ -15,7 +15,6 @@ $(document).ready(function() {
     showTooltip: true,
     onRegionClick: function(element, code, region)
     {
-      console.log(region);
       $('html,body').animate({scrollTop: $("#"+code).offset().top},'slow');
     },
     onRegionOver: function(element, code, region)
@@ -24,10 +23,8 @@ $(document).ready(function() {
       var str = "<table><tr>";
       var cpt = 0;
 
-      $("."+code).parent().find("img").each(function(i,el){
+      $("#"+code).find("img").each(function(i,el){
 
-        if ($(el).parent().parent().is("h2"))
-          return true;
         if (cpt%3 == 0)
           str += "</tr><tr>";
 
