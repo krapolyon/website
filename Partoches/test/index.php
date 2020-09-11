@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="../../css/part.css">
   </head>
 
+  <center>
+    <form action="index.php" method="get">
+      Nombre de morceaux: <input type="number" name="nb">
+      <input type="submit" value="GO!">
+    </form>
+  </center>
+
   <body bgcolor="#181c20" text="#ffffff" link="#FF0000" vlink="#cc0000" alink="#ff8888">
     <center>
       <br><br>
@@ -31,9 +38,14 @@
                   <?php
                     define('__ROOT__', dirname(dirname(dirname(__FILE__))));
                     require_once(__ROOT__.'/Partoches/partoches.php');
-                    pickRandomSongs(__ROOT__."/Partoches/indispensables.csv", 5);
+                    $num = 1;
+                    if (isset($_GET["nb"]))
+                    {
+                      $num = $_GET["nb"];
+                    }
+                    pickRandomSongs(__ROOT__."/Partoches/indispensables.csv", $num);
+                    $num=1;
                   ?>
-
                 </td></tr>
             </table>
           </td>
