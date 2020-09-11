@@ -13,6 +13,7 @@
       <table cellpadding="0" cellspacing="0" border="0" STYLE="width:60em">
         <tr>
           <td  valign=top bgcolor="#ae2020">
+
             <table cellpadding="0" cellspacing="0" border="0" STYLE="width:63em">
               <tr><td>
                   <script type="text/javascript">
@@ -30,8 +31,7 @@
                   <?php
                     define('__ROOT__', dirname(dirname(dirname(__FILE__))));
                     require_once(__ROOT__.'/Partoches/partoches.php');
-                    pickRandomSong(__ROOT__."/Partoches/indispensables.csv");
-                    /* displaySongs(__ROOT__."/Partoches/indispensables.csv"); */
+                    pickRandomSongs(__ROOT__."/Partoches/indispensables.csv", 5);
                   ?>
 
                 </td></tr>

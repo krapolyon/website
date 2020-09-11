@@ -117,10 +117,11 @@ function getNumberOfSongs($inputFile)
 function pickRandomSongs($inputFile, $number=1)
 {
   $max = getNumberOfSongs($inputFile);
-  $i = 0;
-
-  $index = rand(0, $max);
-  displaySongs($inputFile, $index);
+  for($i=0; $i<$number; $i++)
+  {
+    $index = rand(0, $max);
+    displaySongs($inputFile, $index);
+  }
 }
 
 ?>
