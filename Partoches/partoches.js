@@ -80,11 +80,11 @@ function affiche_morceau(nom,auteur,mp3)
   document.write("<em>youteub</em>");
   document.write("</a>");
 
-  document.write("<td  STYLE=\"width:12em\" align=left valign=\"bottom\">");
+  document.write("<td  STYLE=\"width:18em\" align=left valign=\"bottom\">");
   document.write("<span class=maurice_desc>");
 
   var instru = new Array(
-    "tp","tb","sxs","sxm","sb","bs"
+    "tp","tb","tbut","sxs","sxm","sb","bs"
   );
   for (j=0;j<instru.length;j++)
   {
