@@ -79,11 +79,16 @@ function displaySongs($inputFile, $index=-1)
     echo("</td>");
 
     // pdf
-    echo("<td style=\"width:12em\" align=\"left\" valign=\"bottom\"><span class=\"maurice_desc\">");
-    $instrus = array( "tp", "tb", "sxs", "sxm", "sb", "bs" );
+    echo("<td style=\"width:18em\" align=\"left\" valign=\"bottom\"><span class=\"maurice_desc\">");
+    $instrus = array( "tp", "tb", "tbut", "sxs", "sxm", "sb", "bs" );
     foreach ($instrus as $instru)
     {
-      displayLink(getPath($partoche[0], "pdf", $instru), "$instru - ");
+      $displayName = $instru;
+      if ($instru != $instrus[0])
+      {
+        $displayName = " - ".$instru;
+      }
+      displayLink(getPath($partoche[0], "pdf", $instru), "$displayName");
     }
     echo("</span></td>");
 
