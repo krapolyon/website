@@ -1,7 +1,10 @@
 var nouveaux = new Array(
-"Ma Soeur"   ,"Clara Luciani" ,"https://www.youtube.com/watch?v=mU63HJ3NYTM",
-"Purple Rain","Prince de Lu"  ,"https://www.youtube.com/watch?v=TvnYmWpD_T8",
-"Tandu"      ,"New Aura"      ,"https://www.youtube.com/watch?v=nu3J7RNCBjE"
+"Ma Soeur"                     , "Clara Luciani", "https://www.youtube.com/watch?v=mU63HJ3NYTM",
+"Purple Rain"                  , "Prince de Lu" , "https://www.youtube.com/watch?v=TvnYmWpD_T8",
+"Saints of Los Angeles"        , "Motley Crue"  , "https://www.youtube.com/watch?v=IR2QmRJNS4w",
+"Tandu"                        , "New Aura"     , "https://www.youtube.com/watch?v=nu3J7RNCBjE",
+"The Blood the Sweat the Tears", "Machine Head" , "https://www.youtube.com/watch?v=VARzXuaoJWA",
+"WeAreYourFriends"          , "Justice"      , "https://www.youtube.com/watch?v=L0TvnWRSyr4"
 );
 
 var indispensables = new Array(
@@ -15,7 +18,7 @@ var indispensables = new Array(
 "D.a.n.c.e"                    ,"Justice"                      ,"https://www.youtube.com/watch?v=sy1dYFGkPUE",
 "Day Break"                    ,"Overwerk"                     ,"https://www.youtube.com/watch?v=A3PDXmYoF5U",
 "Foals"                        ,"Foals"                        ,"https://www.youtube.com/watch?v=ARu_XbUg8bo",
-"Fuya"                         ,"C2C"                          ,"http://www.youtube.com/watch?v=1KOaT1vdLmc" ,
+"Fuya"                         ,"C2C"                          ,"https://www.youtube.com/watch?v=1KOaT1vdLmc",
 "Ghost in the Shell"           ,"Medley BO"                    ,"https://www.youtube.com/watch?v=ZtzMskOJgHA",
 "Giorgio"                      ,"Daft Punk"                    ,"https://www.youtube.com/watch?v=zhl-Cs1-sG4",
 "Gnossienne"                   ,"Erik Satie"                   ,"https://www.youtube.com/watch?v=oOTpQpoHHaw",
