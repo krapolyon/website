@@ -48,13 +48,27 @@ function displayLink($link, $text)
   }
 }
 
-// display a table containing a list of parts
+// load the file. Return an array containing the contents of the given csv.
 // $inputFile : csv file listing parts, formatted as follow: "Title, Artist, youtube.link"
-function displaySongs($inputFile, $index=-1)
+function loadPartList($inputFile)
 {
   $file = fopen($inputFile,"r");
+  $songList = array();
+  while(($song = fgetcsv($file, 1000, ",")) !== FALSE)
+  {
+    $songList[] = $song;
+  }
+
+  fclose($file);
+  return $songList;
+}
+
+// display a table containing a list of parts
+// $inputSongs : array listing parts, formatted as follow: "Title, Artist, youtube.link"
+function displaySongs($inputSongs, $index=-1)
+{
   $count = -1;
-  while(($partoche = fgetcsv($file, 1000, ",")) !== FALSE)
+  foreach($inputSongs as $partoche)// = fgetcsv($file, 1000, ",")) !== FALSE)
   {
     $count += 1;
     if ($index != -1 AND $index != $count)
@@ -99,29 +113,15 @@ function displaySongs($inputFile, $index=-1)
     echo("<td style=\"width:15em\" align=\"left\" valign=\"bottom\"><span class=\"maurice_desc\">$partoche[1]</span></td>");
     echo("</tr>");
   }
-
-  fclose($file);
 }
 
-function getNumberOfSongs($inputFile)
+function pickRandomSongs($songList, $number=1)
 {
-  $file = fopen($inputFile,"r");
-  $count = 0;
-  while(($partoche = fgetcsv($file, 1000, ",")) !== FALSE)
-  {
-    $count += 1;
-  }
-  fclose($file);
-  return $count;
-}
-
-function pickRandomSongs($inputFile, $number=1)
-{
-  $max = getNumberOfSongs($inputFile);
+  $max = sizeof($songList);
   for($i=0; $i<$number; $i++)
   {
     $index = rand(0, $max);
-    displaySongs($inputFile, $index);
+    displaySongs($songList, $index);
   }
 }
 
