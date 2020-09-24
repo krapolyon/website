@@ -9,26 +9,26 @@
 
   <body bgcolor="#181c20" text="#ffffff" link="#FF0000" vlink="#cc0000" alink="#ff8888">
     <center>
-                  <?php
-                    define('__ROOT__', dirname(dirname(dirname(__FILE__))));
-                    require_once(__ROOT__.'/Partoches/partoches.php');
+      <?php
+        define('__ROOT__', dirname(dirname(__FILE__)));
+        require_once(__ROOT__.'/partoches.php');
 
-                    $songs = loadPartList(__ROOT__."/Partoches/indispensables.csv");
-                    $songs = array_merge($songs, loadPartList(__ROOT__."/Partoches/nouveaux.csv"));
-                    $songId = isset($_GET["song"]) ? $_GET["song"] : FALSE;
-                    $instru = isset($_GET["instru"]) ? $_GET["instru"] : FALSE;
-                  ?>
-                  <form action="download.php" method="get">
-                  <?php
+        $songs = loadPartList(__ROOT__."/indispensables.csv");
+        $songs = array_merge($songs, loadPartList(__ROOT__."/nouveaux.csv"));
+        $songId = isset($_GET["song"]) ? $_GET["song"] : FALSE;
+        $instru = isset($_GET["instru"]) ? $_GET["instru"] : FALSE;
+      ?>
+      <form action="download.php" method="get">
+      <?php
 
-                    songSelection($songs, $songId, $instru);
-                  ?>
-                    <input type="submit" value="GO">
-                  </form>
+        songSelection($songs, $songId, $instru);
+      ?>
+        <input type="submit" value="GO">
+      </form>
       <br><br>
-      <a class=gens href="indispensables.html">- Indispensables -</a>
+      <a class=gens href="/Partoches/indispensables.php">- Indispensables -</a>
       <br><br>
-      <a class=gens href="commecaaumoins.html">- Nouveaut&eacute;s -</a>
+      <a class=gens href="/Partoches/nouveaux.php">- Nouveaut&eacute;s -</a>
       <br><br>
       <a class=gens href="http://krapolyon.free.fr">- Site public krapo -</a>
     </center>

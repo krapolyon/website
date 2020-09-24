@@ -20,7 +20,7 @@ function getPath($morceau, $type, $instru = FALSE )
     // look in the given directory for a case-insensitive match, ignoring whitespaces.
     $cleanPath = strtolower(preg_replace('/\s+/', '', $path));
     // remove '.' and '..'
-    $dir_list = array_slice(scandir(__ROOT__."/Partoches/$type"), 2);
+    $dir_list = array_slice(scandir(__ROOT__."/$type"), 2);
     foreach($dir_list as $file)
     {
       $cleanFile = strtolower(preg_replace('/\s+/', '', $file));
@@ -142,6 +142,7 @@ function songSelection($songList, $selectedSong=0, $selectedInstru="bs")
   }
   echo("</select>");
   echo("</br>");
+  echo("</br>");
 
   echo("<label for=\"instru\"> Instru : </label>");
   echo("<select name=\"instru\">");
@@ -166,6 +167,7 @@ function songSelection($songList, $selectedSong=0, $selectedInstru="bs")
     echo(">$name</option>");
   }
   echo("</select>");
+  echo("</br>");
   echo("</br>");
 }
 

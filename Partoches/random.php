@@ -23,10 +23,6 @@
 
             <table cellpadding="0" cellspacing="0" border="0" STYLE="width:63em">
               <tr><td>
-                  <script type="text/javascript">
-                    titre_rubrique("Indispensables");
-                  </script>
-
                   <tr>
                     <td style="width:6em" align="left" valign="bottom">&nbsp;&nbsp;&nbsp;<em><strong>Les boules</strong></em></td>
                     <td style="width:6em" align="left" valign="bottom">&nbsp;&nbsp;&nbsp;<em><strong>Le son</em></td>
@@ -36,15 +32,15 @@
                     <td style="width:15em" align="left" valign="bottom"><em><strong>Et de qui ?</strong></em></td>
                   </tr>
                   <?php
-                    define('__ROOT__', dirname(dirname(dirname(__FILE__))));
-                    require_once(__ROOT__.'/Partoches/partoches.php');
+                    define('__ROOT__', dirname(__FILE__));
+                    require_once(__ROOT__.'/partoches.php');
                     $num = 1;
                     if (isset($_GET["nb"]))
                     {
                       $num = $_GET["nb"];
                     }
-                    $songs = loadPartList(__ROOT__."/Partoches/indispensables.csv");
-                    $songs = array_merge($songs, loadPartList(__ROOT__."/Partoches/nouveaux.csv"));
+                    $songs = loadPartList(__ROOT__."/indispensables.csv");
+                    $songs = array_merge($songs, loadPartList(__ROOT__."/nouveaux.csv"));
                     pickRandomSongs($songs, $num);
                     $num=1;
                   ?>
