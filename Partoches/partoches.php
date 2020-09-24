@@ -9,15 +9,11 @@ function getPath($morceau, $type, $instru = FALSE )
 {
   $titre = trim($morceau);
   $extension = strtolower($type);
-  $path = "$type/$titre.$extension";
-  if ($instru)
-  {
-    $path = "$type/$titre-$instru.$extension";
-  }
+  $path = $instru ?  "$type/$titre-$instru.$extension" : "$type/$titre.$extension";
 
   if (is_file($path))
   {
-    return $path;
+    return "/Partoches/$path";
   }
   else
   {
@@ -30,7 +26,7 @@ function getPath($morceau, $type, $instru = FALSE )
       $cleanFile = strtolower(preg_replace('/\s+/', '', $file));
       if (preg_match("/$cleanFile/i", $cleanPath , $matches))
       {
-        return $file;
+        return "/Partoches/$type/$file";
       }
     }
   }
