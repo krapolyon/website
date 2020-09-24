@@ -125,4 +125,48 @@ function pickRandomSongs($songList, $number=1)
   }
 }
 
+function songSelection($songList, $selectedSong=0, $selectedInstru="bs")
+{
+  echo("<label for=\"song\"> Morceau : </label>");
+  echo("<select name=\"song\">");
+  $count = 0;
+  foreach($songList as $song)
+  {
+    echo("<option value=$count");
+    if ($count == $selectedSong)
+    {
+      echo(" selected=\"selected\"");
+    }
+    echo(">$song[0]</option>");
+    $count++;
+  }
+  echo("</select>");
+  echo("</br>");
+
+  echo("<label for=\"instru\"> Instru : </label>");
+  echo("<select name=\"instru\">");
+  $count = 0;
+  $instrus = array(
+    "bs" => "Basse",
+    "sxm" => "Sax Alto",
+    "sxs" => "Sax Tenor",
+    "tb" => "Trombone",
+    "tbut" => "Trombone (ut)",
+    "tp" => "Trompette",
+    "sb" => "Souba"
+  );
+
+  foreach($instrus as $code => $name)
+  {
+    echo("<option value=$code");
+    if ($code == $selectedInstru)
+    {
+      echo(" selected=\"selected\"");
+    }
+    echo(">$name</option>");
+  }
+  echo("</select>");
+  echo("</br>");
+}
+
 ?>

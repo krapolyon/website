@@ -7,56 +7,30 @@
     <link rel="stylesheet" href="../../css/part.css">
   </head>
 
-  <center>
-    <form action="index.php" method="get">
-      Nombre de morceaux: <input type="number" name="nb">
-      <input type="submit" value="GO!">
-    </form>
-  </center>
-
   <body bgcolor="#181c20" text="#ffffff" link="#FF0000" vlink="#cc0000" alink="#ff8888">
     <center>
-      <br><br>
-      <table cellpadding="0" cellspacing="0" border="0" STYLE="width:60em">
-        <tr>
-          <td  valign=top bgcolor="#ae2020">
-
-            <table cellpadding="0" cellspacing="0" border="0" STYLE="width:63em">
-              <tr><td>
-                  <script type="text/javascript">
-                    titre_rubrique("Indispensables");
-                  </script>
-
-                  <tr>
-                    <td style="width:6em" align="left" valign="bottom">&nbsp;&nbsp;&nbsp;<em><strong>Les boules</strong></em></td>
-                    <td style="width:6em" align="left" valign="bottom">&nbsp;&nbsp;&nbsp;<em><strong>Le son</em></td>
-                    <td style="width:12em" align="left" valign="bottom"><em><strong>L'imprimable</strong></em></td>
-                    <td style="width:6em" align="left" valign="bottom"><em><strong>Les bips</strong></em></td>
-                    <td style="width:15em" align="left" valign="bottom"><em><strong>Mais quoi</strong></em></td>
-                    <td style="width:15em" align="left" valign="bottom"><em><strong>Et de qui ?</strong></em></td>
-                  </tr>
                   <?php
                     define('__ROOT__', dirname(dirname(dirname(__FILE__))));
                     require_once(__ROOT__.'/Partoches/partoches.php');
-                    $num = 1;
-                    if (isset($_GET["nb"]))
-                    {
-                      $num = $_GET["nb"];
-                    }
-                    pickRandomSongs(__ROOT__."/Partoches/indispensables.csv", $num);
-                    $num=1;
+
+                    $songs = loadPartList(__ROOT__."/Partoches/indispensables.csv");
+                    $songs = array_merge($songs, loadPartList(__ROOT__."/Partoches/nouveaux.csv"));
+                    $songId = isset($_GET["song"]) ? $_GET["song"] : FALSE;
+                    $instru = isset($_GET["instru"]) ? $_GET["instru"] : FALSE;
                   ?>
-                </td></tr>
-            </table>
-          </td>
-        </tr>
-      </table>
+                  <form action="download.php" method="get">
+                  <?php
+
+                    songSelection($songs, $songId, $instru);
+                  ?>
+                    <input type="submit" value="GO">
+                  </form>
       <br><br>
-      <a class=gens href="index.htm">- Le morceau que vous cherchez n'est pas l&agrave; -</a>
+      <a class=gens href="indispensables.html">- Indispensables -</a>
       <br><br>
-      <a class=gens href="commecaaumoins.html">- Les nouveaut&eacute;s -</a>
+      <a class=gens href="commecaaumoins.html">- Nouveaut&eacute;s -</a>
       <br><br>
-      <a class=gens href="http://krapolyon.free.fr">- Aller sur le site public krapo -</a>
+      <a class=gens href="http://krapolyon.free.fr">- Site public krapo -</a>
     </center>
   </body>
 </html>
