@@ -5,7 +5,7 @@
 // $type : directory name. Also used (in lowercase) as file extension.
 // $instru (optional) : filename suffix.
 // return : path to a matching file. FALSE if nothing found.
-function getPath($morceau, $type, $instru = FALSE )
+function getRelativePath($morceau, $type, $instru = FALSE )
 {
   $titre = trim($morceau);
   $extension = strtolower($type);
@@ -13,7 +13,7 @@ function getPath($morceau, $type, $instru = FALSE )
 
   if (is_file($path))
   {
-    return "/Partoches/$path";
+    return $path;
   }
   else
   {
@@ -26,12 +26,19 @@ function getPath($morceau, $type, $instru = FALSE )
       $cleanFile = strtolower(preg_replace('/\s+/', '', $file));
       if (preg_match("/$cleanFile/i", $cleanPath , $matches))
       {
-        return "/Partoches/$type/$file";
+        return "$type/$file";
       }
     }
   }
 
   return FALSE;
+}
+
+// get file path in website ref.
+function getPath($morceau, $type, $instru = FALSE )
+{
+  $rel = getRelativePath($morceau, $type, $instru);
+  return $rel ? "/Partoches/" . $rel : FALSE;
 }
 
 // display given link if existing

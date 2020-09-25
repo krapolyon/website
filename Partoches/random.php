@@ -2,13 +2,15 @@
 <html>
   <head>
     <title>
-      Indispensable : Adj, qui est tr&egrave;s n&eacute;cessaire, dont on ne peut se passer
+      Al&eacute;atoire : Adj, Qui se produit par hasard.
     </title>
     <link rel="stylesheet" href="../../css/part.css">
   </head>
 
   <center>
     <form action="random.php" method="get">
+      <a class=gens>Des morceaux choisis au pif</a>
+      <br><br>
       Nombre de morceaux: <input type="number" name="nb">
       <input type="submit" value="GO!">
     </form>
@@ -51,10 +53,6 @@
       </table>
       <br><br>
       <a class=gens href="index.htm">- Le morceau que vous cherchez n'est pas l&agrave; -</a>
-      <br><br>
-      <a class=gens href="commecaaumoins.html">- Les nouveaut&eacute;s -</a>
-      <br><br>
-      <a class=gens href="http://krapolyon.free.fr">- Aller sur le site public krapo -</a>
     </center>
   </body>
 </html>

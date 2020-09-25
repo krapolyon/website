@@ -15,10 +15,10 @@
 
         $songs = loadPartList(__ROOT__."/indispensables.csv");
         $songs = array_merge($songs, loadPartList(__ROOT__."/nouveaux.csv"));
-        $songId = isset($_GET["song"]) ? $_GET["song"] : FALSE;
-        $instru = isset($_GET["instru"]) ? $_GET["instru"] : FALSE;
+        $songId = isset($_POST["song"]) ? $_POST["song"] : FALSE;
+        $instru = isset($_POST["instru"]) ? $_POST["instru"] : FALSE;
       ?>
-      <form action="download.php" method="get">
+      <form action="download.php" method="post">
       <?php
 
         songSelection($songs, $songId, $instru);
