@@ -72,18 +72,15 @@ function loadPartList($inputFile)
 
 // display a table containing a list of parts
 // $inputSongs : array listing parts, formatted as follow: "Title, Artist, youtube.link"
-function displaySongs($inputSongs, $index=-1)
+function displaySongs($inputSongs)
 {
   $count = -1;
   foreach($inputSongs as $partoche)// = fgetcsv($file, 1000, ",")) !== FALSE)
   {
     $count += 1;
-    if ($index != -1 AND $index != $count)
-    {
-      continue;
-    }
 
-    echo("<tr>");
+    $bgcol = $count % 2 == 0 ? "#ae2020" : "#ae4040";
+    echo("<tr bgcolor=\"$bgcol\">");
 
     // NWC
     echo ("<td style=\"width:6em\" align=\"left\" valign=\"bottom\">&nbsp;&nbsp;");
@@ -124,12 +121,9 @@ function displaySongs($inputSongs, $index=-1)
 
 function pickRandomSongs($songList, $number=1)
 {
-  $max = sizeof($songList);
-  for($i=0; $i<$number; $i++)
-  {
-    $index = rand(0, $max);
-    displaySongs($songList, $index);
-  }
+  shuffle($songList);
+  $extract = array_slice($songList, 0, $number);
+  displaySongs($extract);
 }
 
 function songSelection($songList, $selectedSong=0, $selectedInstru="bs")
