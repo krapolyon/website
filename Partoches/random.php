@@ -9,30 +9,17 @@
 
   <center>
     <form action="random.php" method="get">
-      <a class=gens>Des morceaux choisis au pif</a>
+      <a class=menuEntry>Des morceaux choisis au pif</a>
       <br><br>
       Nombre de morceaux: <input type="number" name="nb">
       <input type="submit" value="GO!">
     </form>
   </center>
 
-  <body bgcolor="#181c20" text="#ffffff" link="#FF0000" vlink="#cc0000" alink="#ff8888">
+  <body>
     <center>
       <br><br>
-      <table cellpadding="0" cellspacing="0" border="0" STYLE="width:60em">
-        <tr>
-          <td  valign=top bgcolor="#ae2020">
-
-            <table cellpadding="0" cellspacing="0" border="0" STYLE="width:63em">
-              <tr><td>
-                  <tr>
-                    <td style="width:6em" align="left" valign="bottom">&nbsp;&nbsp;&nbsp;<em><strong>Les boules</strong></em></td>
-                    <td style="width:6em" align="left" valign="bottom">&nbsp;&nbsp;&nbsp;<em><strong>Le son</em></td>
-                    <td style="width:12em" align="left" valign="bottom"><em><strong>L'imprimable</strong></em></td>
-                    <td style="width:6em" align="left" valign="bottom"><em><strong>Les bips</strong></em></td>
-                    <td style="width:15em" align="left" valign="bottom"><em><strong>Mais quoi</strong></em></td>
-                    <td style="width:15em" align="left" valign="bottom"><em><strong>Et de qui ?</strong></em></td>
-                  </tr>
+      <table class="songList">
                   <?php
                     define('__ROOT__', dirname(__FILE__));
                     require_once(__ROOT__.'/partoches.php');
@@ -46,13 +33,9 @@
                     pickRandomSongs($songs, $num);
                     $num=1;
                   ?>
-                </td></tr>
-            </table>
-          </td>
-        </tr>
       </table>
       <br><br>
-      <a class=gens href="index.htm">- Le morceau que vous cherchez n'est pas l&agrave; -</a>
+      <a class=menuEntry href="index.htm">- Le morceau que vous cherchez n'est pas l&agrave; -</a>
     </center>
   </body>
 </html>

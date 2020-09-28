@@ -26,11 +26,11 @@
         <input type="submit" value="GO">
       </form>
       <br><br>
-      <a class=gens href="/Partoches/indispensables.php">- Indispensables -</a>
+      <a class=menuEntry href="/Partoches/indispensables.php">- Indispensables -</a>
       <br><br>
-      <a class=gens href="/Partoches/nouveaux.php">- Nouveaut&eacute;s -</a>
+      <a class=menuEntry href="/Partoches/nouveaux.php">- Nouveaut&eacute;s -</a>
       <br><br>
-      <a class=gens href="http://krapolyon.free.fr">- Site public krapo -</a>
+      <a class=menuEntry href="http://krapolyon.free.fr">- Site public krapo -</a>
     </center>
   </body>
 </html>

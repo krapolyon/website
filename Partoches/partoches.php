@@ -18,12 +18,13 @@ function getRelativePath($morceau, $type, $instru = FALSE )
   else
   {
     // look in the given directory for a case-insensitive match, ignoring whitespaces.
-    $cleanPath = strtolower(preg_replace('/\s+/', '', $path));
+    $toRemove = '/[_\W]+/';
+    $cleanPath = strtolower(preg_replace($toRemove, '', $path));
     // remove '.' and '..'
     $dir_list = array_slice(scandir(__ROOT__."/$type"), 2);
     foreach($dir_list as $file)
     {
-      $cleanFile = strtolower(preg_replace('/\s+/', '', $file));
+      $cleanFile = strtolower(preg_replace($toRemove, '', $file));
       if (preg_match("/$cleanFile/i", $cleanPath , $matches))
       {
         return "$type/$file";
@@ -42,17 +43,25 @@ function getPath($morceau, $type, $instru = FALSE )
 }
 
 // display given link if existing
-function displayLink($link, $text)
+function getDisplayLink($link, $text)
 {
+  $tag = '<span class="songItem"><em>' . $text . '</em></span>';
   if ($link !== FALSE)
   {
-    echo("<a href=\"$link\" class=\"maurice\" onclick=\"window.open(this.href); return false;\">");
+    $tag = '<a href="' 
+      . $link 
+      . '" onclick="window.open(this.href); return false;">'
+      . $tag
+      . '</a>';
   }
-  echo("<em>$text</em>");
-  if ($link !== FALSE)
+  else
   {
-    echo("</a>");
+    $tag = '<span class="fileNotFound">'
+      . $tag
+      . '</span>';
   }
+
+  return $tag;
 }
 
 // load the file. Return an array containing the contents of the given csv.
@@ -74,51 +83,64 @@ function loadPartList($inputFile)
 // $inputSongs : array listing parts, formatted as follow: "Title, Artist, youtube.link"
 function displaySongs($inputSongs)
 {
-  $count = -1;
-  foreach($inputSongs as $partoche)// = fgetcsv($file, 1000, ",")) !== FALSE)
+  echo('
+        <tr>
+          <th>Mais quoi ?</th>
+          <th>Et de qui ?</th>
+          <th>Les bips</th>
+          <th>Les boules</th>
+          <th>L\'imprimable</th>
+        </tr>
+  ');
+  foreach($inputSongs as $partoche)
   {
-    $count += 1;
-
-    $bgcol = $count % 2 == 0 ? "#ae2020" : "#ae4040";
-    echo("<tr bgcolor=\"$bgcol\">");
-
-    // NWC
-    echo ("<td style=\"width:6em\" align=\"left\" valign=\"bottom\">&nbsp;&nbsp;");
-    displayLink(getPath($partoche[0], "NWC"), "partition");
-    echo ("</td>");
+    echo('<tr>');
 
     // Youtube link
-    echo("<td style=\"width:6em\" align=\"left\" valign=\"bottom\">");
-    displayLink($partoche[2], "youteub");
-    echo("</td>");
-
-    // pdf
-    echo("<td style=\"width:18em\" align=\"left\" valign=\"bottom\"><span class=\"maurice_desc\">");
-    $instrus = array( "tp", "tb", "tbut", "sxs", "sxm", "sb", "bs" );
-    foreach ($instrus as $instru)
-    {
-      $displayName = $instru;
-      if ($instru != $instrus[0])
-      {
-        $displayName = " - ".$instru;
-      }
-      displayLink(getPath($partoche[0], "pdf", $instru), "$displayName");
-    }
-    echo("</span></td>");
-
-    // midi
-    echo("<td style=\"width:6em\" align=\"left\" valign=\"bottom\"><span class=\"maurice_desc\">");
-    displayLink(getPath($partoche[0], "mid"), "midi");
-    echo("</span></td>");
+    echo ('<td class="songTitle">'
+      . getDisplayLink($partoche[2], $partoche[0])
+      . '</td>');
 
     // title
-    echo("<td style=\"width:15em\" height=\"25\" align=\"left\" valign=\"bottom\"><span class=\"maurice_desc\">$partoche[0]</span></td>");
+    /* echo("<td class='songTitle'>$partoche[0]</td>"); */
     // artist
-    echo("<td style=\"width:15em\" align=\"left\" valign=\"bottom\"><span class=\"maurice_desc\">$partoche[1]</span></td>");
-    echo("</tr>");
+    echo("<td class='songTitle'>$partoche[1]</td>");
+
+    // midi
+    echo ('<td>'
+      . getDisplayLink(getPath($partoche[0], "mid"), "midi")
+      . '</td>');
+
+    // NWC
+    echo ('<td>'
+      . getDisplayLink(getPath($partoche[0], "NWC"), "nwc")
+      . getDisplayLink(getPath($partoche[0], "mscz"), "mscz")
+      . '</td>');
+
+    // pdf
+    echo('<td>');
+    $instrus = array(
+      "bs" => "Basse",
+      "sxm" => "Sax Alto",
+      "sxs" => "Sax Tenor",
+      "sb" => "Souba",
+      "tb" => "Trombone",
+      "tbut" => "Trombone-ut",
+      "tp" => "Trompette"
+    );
+    foreach($instrus as $code => $name)
+    {
+      echo(getDisplayLink(getPath($partoche[0], "pdf", $code), "$name"));
+    }
+    echo('</td>');
+
+    echo('</tr>');
   }
 }
 
+/**
+ * Slice $number items out of $songlist and display them.
+ */
 function pickRandomSongs($songList, $number=1)
 {
   shuffle($songList);
@@ -126,6 +148,9 @@ function pickRandomSongs($songList, $number=1)
   displaySongs($extract);
 }
 
+/**
+ * Create select items to choose a song and a pdf part.
+ */
 function songSelection($songList, $selectedSong=0, $selectedInstru="bs")
 {
   echo("<label for=\"song\"> Morceau : </label>");
@@ -152,10 +177,10 @@ function songSelection($songList, $selectedSong=0, $selectedInstru="bs")
     "bs" => "Basse",
     "sxm" => "Sax Alto",
     "sxs" => "Sax Tenor",
+    "sb" => "Souba",
     "tb" => "Trombone",
     "tbut" => "Trombone (ut)",
-    "tp" => "Trompette",
-    "sb" => "Souba"
+    "tp" => "Trompette"
   );
 
   foreach($instrus as $code => $name)

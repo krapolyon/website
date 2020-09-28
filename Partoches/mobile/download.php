@@ -18,7 +18,7 @@ if ($path)
 }
 {
   echo("Cette partition n'existe pas ! Dommage ...");
-  echo("<a class=gens href=\"index.php\">Essayer une autre</a>"); 
+  echo("<a class=menuEntry href=\"index.php\">Essayer une autre</a>"); 
 }
 ?> 
 

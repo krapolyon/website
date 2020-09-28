@@ -72,19 +72,19 @@ function affiche_morceau(nom,auteur,mp3)
   document.write("&nbsp;&nbsp;<a href=\"NWC/");
   document.write(nom);
 
-  document.writeln(".nwc\" class=maurice>");
+  document.writeln(".nwc\" class=clickableSongItem>");
   document.write("<em>partition</em>");
   document.write("</a></td>");
   //
   document.write("<td  STYLE=\"width:6em\" align=left valign=\"bottom\">");
   document.write("&nbsp;&nbsp;<a onclick=\"window.open(this.href); return false;\" href=\"");
   document.write(mp3);
-  document.writeln("\" class=maurice>");
+  document.writeln("\" class=clickableSongItem>");
   document.write("<em>youteub</em>");
   document.write("</a>");
 
   document.write("<td  STYLE=\"width:18em\" align=left valign=\"bottom\">");
-  document.write("<span class=maurice_desc>");
+  document.write("<span class=songItem>");
 
   var instru = new Array(
     "tp","tb","tbut","sxs","sxm","sb","bs"
@@ -95,7 +95,7 @@ function affiche_morceau(nom,auteur,mp3)
     document.write(nom);
     document.writeln("-");
     document.write(instru[j]);
-    document.writeln(".pdf\" class=maurice onclick=\"window.open(this.href); return false;\"><em>");
+    document.writeln(".pdf\" class=clickableSongItem onclick=\"window.open(this.href); return false;\"><em>");
     document.write(instru[j]);
     if(j<instru.length-1) {
       document.writeln(" - ");
@@ -105,21 +105,21 @@ function affiche_morceau(nom,auteur,mp3)
   document.write("</span></td>");
 
   document.write("<td  STYLE=\"width:6em\" align=left valign=\"bottom\">");
-  document.write("<span class=maurice_desc>");
+  document.write("<span class=songItem>");
   document.write("<a href=\"mid/");
   document.write(nom);
-  document.writeln(".mid\" class=maurice onclick=\"window.open(this.href); return false;\"><em>midi</em></a>");
+  document.writeln(".mid\" class=clickableSongItem onclick=\"window.open(this.href); return false;\"><em>midi</em></a>");
   document.write("</span></td>");
 
   //
   document.writeln("<td STYLE=\"width:15em\" height=\"25\" align=left valign=\"bottom\">");
-  document.write("<span class=maurice_desc>");
+  document.write("<span class=songItem>");
   //espace_rand();
   document.write(nom);
   document.write("</span></td>");
   //
   document.write("<td  STYLE=\"width:15em\" align=left valign=\"bottom\">");
-  document.write("<span class=maurice_desc>");
+  document.write("<span class=songItem>");
   document.write(auteur);
   document.write("</span></td>");
   //
@@ -139,8 +139,8 @@ function affiche(t,l)
 function titre_rubrique(nom)
 {
   document.writeln("<tr> <td width=6em></td><td width=6em></td><td width=6em></td><td height=\"40\" width=\"51em\" align=left valign=\"bottom\" colspan=4>");
-  document.writeln("<span class=gens>");
-  //document.writeln("<span class=gens> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+  document.writeln("<span class=menuEntry>");
+  //document.writeln("<span class=menuEntry> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
   document.write(nom);
   document.writeln("</span>  </td>   </tr>");
 }
