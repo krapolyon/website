@@ -43,9 +43,9 @@ function getPath($morceau, $type, $instru = FALSE )
 }
 
 // display given link if existing
-function getDisplayLink($link, $text)
+function getDisplayLink($link, $text, $class)
 {
-  $tag = '<span class="songItem"><em>' . $text . '</em></span>';
+  $tag = $text;
   if ($link !== FALSE)
   {
     $tag = '<a href="' 
@@ -56,10 +56,10 @@ function getDisplayLink($link, $text)
   }
   else
   {
-    $tag = '<span class="fileNotFound">'
-      . $tag
-      . '</span>';
+    $tag = '<span class=fileNoteFound>' . $tag . '<span>';
   }
+
+  $tag = '<span class=' . $class . '><em>' . $tag . '</em></span>';
 
   return $tag;
 }
@@ -84,6 +84,7 @@ function loadPartList($inputFile)
 function displaySongs($inputSongs)
 {
   echo('
+      <thead>
         <tr>
           <th>Mais quoi ?</th>
           <th>Et de qui ?</th>
@@ -91,30 +92,31 @@ function displaySongs($inputSongs)
           <th>Les boules</th>
           <th>L\'imprimable</th>
         </tr>
+      </thead>
   ');
   foreach($inputSongs as $partoche)
   {
     echo('<tr>');
 
     // Youtube link
-    echo ('<td class="songTitle">'
-      . getDisplayLink($partoche[2], $partoche[0])
+    echo ('<td>'
+      . getDisplayLink($partoche[2], $partoche[0], 'songTitle')
       . '</td>');
 
     // title
     /* echo("<td class='songTitle'>$partoche[0]</td>"); */
     // artist
-    echo("<td class='songTitle'>$partoche[1]</td>");
+    echo("<td><span class='songTitle'>$partoche[1]</td>");
 
     // midi
     echo ('<td>'
-      . getDisplayLink(getPath($partoche[0], "mid"), "midi")
+      . getDisplayLink(getPath($partoche[0], "mid"), "midi", "songItem")
       . '</td>');
 
     // NWC
     echo ('<td>'
-      . getDisplayLink(getPath($partoche[0], "NWC"), "nwc")
-      . getDisplayLink(getPath($partoche[0], "mscz"), "mscz")
+      . getDisplayLink(getPath($partoche[0], "NWC"), "nwc", "songItem")
+      . getDisplayLink(getPath($partoche[0], "mscz"), "mscz", "songItem")
       . '</td>');
 
     // pdf
@@ -130,7 +132,7 @@ function displaySongs($inputSongs)
     );
     foreach($instrus as $code => $name)
     {
-      echo(getDisplayLink(getPath($partoche[0], "pdf", $code), "$name"));
+      echo(getDisplayLink(getPath($partoche[0], "pdf", $code), "$name", "songItem"));
     }
     echo('</td>');
 

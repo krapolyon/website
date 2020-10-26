@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/part.css">
   </head>
 
-  <body bgcolor="#181c20" text="#ffffff" link="#FF0000" vlink="#cc0000" alink="#ff8888">
+  <body>
     <center>
       <?php
         define('__ROOT__', dirname(dirname(__FILE__)));

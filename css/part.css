@@ -21,8 +21,8 @@ h1, .menuEntry{
   border-collapse:collapse;
 }
 
-tr:nth-child(even) {
-  background-color: #ae4040;
+.menu {
+  background-color: #ae2020;
 }
 
 th {
@@ -32,10 +32,29 @@ th {
   color: #ff8e00;
 }
 
+tbody tr td:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+}
+
 td {
   padding: 2px 10px;
   font-size: 14px;
   text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ae4040;
+}
+
+tbody tr:hover {
+  background-color: #ae6060;
+}
+
+tbody tr:hover .songTitle {
+  color: #ff8e00;
 }
 
 .songTitle {
@@ -47,6 +66,7 @@ td {
   color: #b0e2ff;
   padding: 0px 8px;
 }
+
 .songItem:hover {
   text-decoration: underline;
 }

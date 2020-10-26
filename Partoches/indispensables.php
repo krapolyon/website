@@ -10,7 +10,7 @@
   <body>
     <center>
       <br><br>
-      <a class=menuEntry>Les Indispensables</a>
+      <h1>Les Indispensables</h1>
       <br><br>
       <table class="songList">
       <?php
@@ -20,12 +20,15 @@
         displaySongs($songs);
       ?>
       </table>
-      <br><br>
-      <a class=menuEntry href="index.htm">- Le morceau que vous cherchez n'est pas l&agrave; -</a>
-      <br><br>
-      <a class=menuEntry href="nouveaux.php">- Les nouveaut&eacute;s -</a>
-      <br><br>
-      <a class=menuEntry href="http://krapolyon.free.fr">- Aller sur le site public krapo -</a>
+      <div>
+        <br><br>
+        <a class=menuEntry href="index.htm">- Le morceau que vous cherchez n'est pas l&agrave; -</a>
+        <br><br>
+        <a class=menuEntry href="nouveaux.php">- Les nouveaut&eacute;s -</a>
+        <br><br>
+        <a class=menuEntry href="http://krapolyon.free.fr">- Aller sur le site public krapo -</a>
+        <br><br>
+      </div>
     </center>
   </body>
 </html>

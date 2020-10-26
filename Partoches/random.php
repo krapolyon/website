@@ -35,7 +35,9 @@
                   ?>
       </table>
       <br><br>
-      <a class=menuEntry href="index.htm">- Le morceau que vous cherchez n'est pas l&agrave; -</a>
+      <div>
+        <a class=menuEntry href="index.htm">- Le morceau que vous cherchez n'est pas l&agrave; -</a>
+      </div>
     </center>
   </body>
 </html>
