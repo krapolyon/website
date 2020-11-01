@@ -46,6 +46,13 @@ function getPath($morceau, $type, $instru = FALSE )
 function getDisplayLink($link, $text, $class)
 {
   $tag = $text;
+  if ($link == FALSE)
+  {
+    $tag = '<span class=fileNotFound>' . $tag . '</span>';
+  }
+
+  $tag = '<span class=' . $class . '><em>' . $tag . '</em></span>';
+
   if ($link !== FALSE)
   {
     $tag = '<a href="' 
@@ -54,12 +61,6 @@ function getDisplayLink($link, $text, $class)
       . $tag
       . '</a>';
   }
-  else
-  {
-    $tag = '<span class=fileNoteFound>' . $tag . '<span>';
-  }
-
-  $tag = '<span class=' . $class . '><em>' . $tag . '</em></span>';
 
   return $tag;
 }
@@ -103,10 +104,8 @@ function displaySongs($inputSongs)
       . getDisplayLink($partoche[2], $partoche[0], 'songTitle')
       . '</td>');
 
-    // title
-    /* echo("<td class='songTitle'>$partoche[0]</td>"); */
     // artist
-    echo("<td><span class='songTitle'>$partoche[1]</td>");
+    echo('<td><span class=songTitle>' . $partoche[1] . '</span></td>');
 
     // midi
     echo ('<td>'
@@ -136,7 +135,8 @@ function displaySongs($inputSongs)
     }
     echo('</td>');
 
-    echo('</tr>');
+    echo('</tr>
+      ');
   }
 }
 
