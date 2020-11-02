@@ -162,9 +162,11 @@ table tr td {
 	text-align: center;
 	vertical-align: top;
 }
-
 table tr.altrow td {
 	background: #FFDDDD;
+}
+table tr:hover td {
+	background-color: #fff1b3;
 }
 td.actions {
 	text-align: center;

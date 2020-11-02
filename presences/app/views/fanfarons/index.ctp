@@ -1,6 +1,12 @@
 <div class="fanfarons index">
 <h2><?php __('Pr&eacute;sences aux plans');?></h2>
 <p><?php __('Cliquez sur votre nom pour modifier votre pr&eacute;sence sur l\'ensemble des plans');?><br/>&nbsp;</p>
+<p> 
+			<?php
+			 //echo $fanfaron['Fanfaron']['name'];
+echo $html->link(__('liste des fanfarons (test)', true), array('action'=>'chooser'));
+			?>
+</p>
 
 <table cellpadding="0" cellspacing="0">
 <tr>
