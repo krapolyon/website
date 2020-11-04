@@ -520,3 +520,29 @@ td.cache:hover span.statut_cache {
 td.cache:hover span.statut_visible {
 	display:none;
 }
+
+summary {
+	font-size: 18px;
+	height: 24px;
+	padding: 12px;
+	margin: 4px;
+  background: #ffcc33;
+  max-width: 300px;
+}
+
+details ul li {
+	font-size: 12px;
+	list-style-type:none;
+	max-width: 250px;
+  min-width: 250px;
+	margin: 4px;
+	background: #fff1b3;
+}
+
+.buttonLink {
+	text-decoration: none;
+	padding: 8px;
+	background: #fff1b3;
+	display: inline-block;
+  min-width: inherit;
+}
