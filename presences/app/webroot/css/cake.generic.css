@@ -521,13 +521,17 @@ td.cache:hover span.statut_visible {
 	display:none;
 }
 
+.foldableList {
+  max-width: max-content;
+  min-width: max-content;
+}
+
 summary {
 	font-size: 18px;
 	height: 24px;
 	padding: 12px;
 	margin: 4px;
   background: #ffcc33;
-  max-width: 300px;
 }
 
 details ul li {
