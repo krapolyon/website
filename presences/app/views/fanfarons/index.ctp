@@ -1,13 +1,13 @@
 <div class="fanfarons index">
 <h2><?php __('Pr&eacute;sences aux plans');?></h2>
 <p> 
-<?php  echo $html->link(__(">> Cliquez ICI pour vous inscrire <<", true), array('action'=>'chooser'), array('class' => 'buttonLink')); ?>
+<p><?php __('Cliquez sur votre nom pour modifier votre pr&eacute;sence sur l\'ensemble des plans');?><br/>&nbsp;</p>
 </p>
 <br><br>
 
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th class="fanfaron"><?php echo $paginator->sort('', 'name');?></th>
+	<th class="fanfaron"></th>
 	<?php
 		foreach($contrats as $contrat) {
 			if($contrat['OK'] == 0){
@@ -89,10 +89,10 @@ foreach ($fanfarons as $fanfaron):
 	}
 ?>
 	<tr<?php echo $class;?>>
-		<td>
+		<td class='fanfaron'>
 			<?php
-			 //echo $fanfaron['Fanfaron']['name'];
-			echo $html->link(__($fanfaron['Fanfaron']['name'], true), array('action'=>'edit', $fanfaron['Fanfaron']['id']));
+  echo $html->link(__($fanfaron['Fanfaron']['name'], true)
+    , array('action'=>'edit', $fanfaron['Fanfaron']['id']));
 			?>
 		</td>
 		<?php

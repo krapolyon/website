@@ -504,6 +504,12 @@ td.Non {
 	
 }
 
+td.fanfaron a {
+  display: inline-block;
+  width: 100%;
+  padding: 2px 0px;
+}
+
 span.statut_cache {
 	display:none;
 }
@@ -513,34 +519,21 @@ td.cache:hover {
 	color:black;
 }
 
-td.cache:hover span.statut_cache {
-	display:inline;
-}
+@media only screen and (min-width: 600px) {
+  td.cache:hover span.statut_cache {
+    display:inline;
+  }
 
-td.cache:hover span.statut_visible {
-	display:none;
-}
-
-.foldableList {
-  max-width: max-content;
-  min-width: max-content;
+  td.cache:hover span.statut_visible {
+    display:none;
+  }
 }
 
 summary {
 	font-size: 18px;
-	height: 24px;
 	padding: 12px;
 	margin: 4px;
   background: #ffcc33;
-}
-
-details ul li {
-	font-size: 12px;
-	list-style-type:none;
-	max-width: 250px;
-  min-width: 250px;
-	margin: 4px;
-	background: #fff1b3;
 }
 
 .buttonLink {
