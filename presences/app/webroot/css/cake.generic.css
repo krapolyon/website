@@ -168,6 +168,11 @@ table tr.altrow td {
 table tr:hover td {
 	background-color: #fff1b3;
 }
+
+.row:hover {
+	background-color: #fff1b3;
+}
+
 td.actions {
 	text-align: center;
 	white-space: nowrap;
@@ -176,6 +181,11 @@ td.actions a {
 	display: inline;
 	margin: 0px 6px;
 }
+span.actions {
+	text-align: center;
+	white-space: nowrap;
+}
+
 .cake-sql-log table {
 	background: #f4f4f4;
 }
@@ -475,7 +485,28 @@ table tr.instrument td.ok {
 	font-weight: bold;
 }
 
+.row .instrument span {
+	background: #FFF1B3;
+	font-weight: bold;
+}
+
+.row .instrument span.ko {
+	background: #ff6666;
+	font-weight: bold;
+}
+
+.row .instrument span.ok {
+	background: #66FF66;
+	font-weight: bold;
+}
+
 td.pasrepondu {
+	color: red;
+	background: #FFDDDD;
+	font-weight: bold;
+}
+
+span.pasrepondu {
 	color: red;
 	background: #FFDDDD;
 	font-weight: bold;
@@ -485,12 +516,26 @@ th.fanfaron {
 	width: 150px;	
 }
 
+h3.fanfaron {
+	width: 150px;	
+}
+
 th.contrat {
 	width: 140px;
 	background: #00CC00;	
 }
 
 th.contrat_ko {
+	width: 140px;
+	background: #ff6666;	
+}
+
+h3.contrat {
+	width: 140px;
+	background: #00CC00;	
+}
+
+h3.contrat_ko {
 	width: 140px;
 	background: #ff6666;	
 }
@@ -509,6 +554,13 @@ td.fanfaron a {
   width: 100%;
   padding: 2px 0px;
 }
+
+.row span.fanfaron a {
+  display: inline-block;
+  width: 100%;
+  padding: 2px 0px;
+}
+
 
 span.statut_cache {
 	display:none;
@@ -543,3 +595,15 @@ summary {
 	display: inline-block;
   min-width: inherit;
 }
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column {
+  float: left;
+  padding: 15px;
+}
+

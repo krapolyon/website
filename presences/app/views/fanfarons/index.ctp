@@ -5,16 +5,15 @@
 </p>
 <br><br>
 
-<table cellpadding="0" cellspacing="0">
-<tr>
-	<th class="fanfaron"></th>
+<div class="row">
+	<div class="column fanfaron"></div>
 	<?php
 		foreach($contrats as $contrat) {
 			if($contrat['OK'] == 0){
-				echo "<th class=\"contrat_ko\">";
+				echo "<h3 class=\"column contrat_ko\">";
 			}
 			else {
-				echo "<th class=\"contrat\">";
+				echo "<h3 class=\"column contrat\">";
 			}
 			$contrat_title = $contrat['Contrat']['date_debut'];
 
@@ -36,11 +35,11 @@
 			if($contrat['Presents']['peutetre'] > 0) {
 				echo " ( +".$contrat['Presents']['peutetre'].")";
 			}
-			echo "</th>";
+			echo "</h3>";
 		}
 	?>
-	<th class="actions"><?php __('Youpi, y\'a de la place pour plein de plans en plus !');?></th>
-</tr>
+	<h3 class="column actions"><?php __('Youpi, y\'a de la place pour plein de plans en plus !');?></h3>
+</div>
 <?php
 $i = 0;
 $instrument_counter = 0;
@@ -48,53 +47,49 @@ foreach ($fanfarons as $fanfaron):
 	$class = null;
 	$instru_class = null;
 
-	/* if ($i++ % 2 == 0) {
-		$class = ' class="altrow"';
-	}*/
-
 	$instrument_id = $fanfaron['Instrument']['id'];
 	if($instrument_id > $instrument_counter) {
 		?>
-		<tr class="instrument">
-			<td>
+		<div class="row instrument">
+			<h3 class="column">
 				<?php echo $fanfaron['Instrument']['name']; ?>
 
-			</td>
+			</h3>
 			<?php
 				foreach($contrats as $contrat) {
 					if($contrat['Instrument'][$instrument_id]['oui'] > 0) {
-						$instru_class = ' class="ok"';
+						$instru_class = 'ok';
 					}
 					else {
-						$instru_class = ' class="ko"';
+						$instru_class = 'ko';
 					}
 					?>
-					<td<?php echo $instru_class;?>>
+					<span class=<?php echo "column $instru_class "; ?>>
 					<?php
 						echo $contrat['Instrument'][$instrument_id]['oui'];
 						if($contrat['Instrument'][$instrument_id]['peutetre'] > 0) {
 							echo " ( +".$contrat['Instrument'][$fanfaron['Instrument']['id']]['peutetre'].")";
 						}
 					?>
-					</td>
+					</span>
 					<?php
 				}
 			?>
-			<td>
+			<span class="column">
 
-			</td>
-		</tr>
+			</span>
+		</div>
 		<?php
 		$instrument_counter = $fanfaron['Instrument']['id'];
 	}
 ?>
-	<tr<?php echo $class;?>>
-		<td class='fanfaron'>
+	<div class="row">
+		<h3 class='column fanfaron'>
 			<?php
   echo $html->link(__($fanfaron['Fanfaron']['name'], true)
     , array('action'=>'edit', $fanfaron['Fanfaron']['id']));
 			?>
-		</td>
+		</h3>
 		<?php
 			foreach($contrats as $contrat) {
 				$statut_trouve = 0;
@@ -102,7 +97,7 @@ foreach ($fanfarons as $fanfaron):
 					if($fanfaron_contrat['ContratsFanfaron']['fanfaron_id'] == $fanfaron['Fanfaron']['id']) {
 						$statut_trouve = 1;
 						?>
-						<td class="cache
+						<span class="column cache
 						<?php
 						if($fanfaron_contrat['ContratsFanfaron']['statut'] == "") {
 							echo "pasrepondu";
@@ -138,14 +133,14 @@ foreach ($fanfarons as $fanfaron):
 							<?php
 							}
 							?>
-						</td>
+						</span>
 						<?php
 
 					}
 				}
 				if($statut_trouve == 0) {
 					?>
-					<td class="cache pasrepondu">
+					<span class="column cache pasrepondu">
 						<span class="statut_visible">?</span>
 						<?php
 							foreach($statuts as $statut) {
@@ -160,16 +155,15 @@ foreach ($fanfarons as $fanfaron):
 						<?php
 						}
 						?>
-					</td>
+					</span>
 					<?php
 				}
 			}
 
 		?>
-		<td class="actions">
+		<span class="column actions">
 			<?php //echo $html->link(__('Modifier', true), array('action'=>'edit', $fanfaron['Fanfaron']['id'])); ?>
-		</td>
-	</tr>
+		</span>
+	</div>
 <?php endforeach; ?>
-</table>
 </div>
