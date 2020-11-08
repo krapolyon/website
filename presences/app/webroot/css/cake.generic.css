@@ -490,12 +490,12 @@ table tr.instrument td.ok {
 	font-weight: bold;
 }
 
-.row .instrument span.ko {
+.row span.ko {
 	background: #ff6666;
 	font-weight: bold;
 }
 
-.row .instrument span.ok {
+.row span.ok {
 	background: #66FF66;
 	font-weight: bold;
 }
@@ -531,12 +531,10 @@ th.contrat_ko {
 }
 
 h3.contrat {
-	width: 140px;
 	background: #00CC00;	
 }
 
 h3.contrat_ko {
-	width: 140px;
 	background: #ff6666;	
 }
 
@@ -581,13 +579,6 @@ td.cache:hover {
   }
 }
 
-summary {
-	font-size: 18px;
-	padding: 12px;
-	margin: 4px;
-  background: #ffcc33;
-}
-
 .buttonLink {
 	text-decoration: none;
 	padding: 8px;
@@ -605,5 +596,6 @@ summary {
 .column {
   float: left;
   padding: 15px;
+  width: 140px;
 }
 

@@ -49,40 +49,47 @@ foreach ($fanfarons as $fanfaron):
 
 	$instrument_id = $fanfaron['Instrument']['id'];
 	if($instrument_id > $instrument_counter) {
-		?>
-		<div class="row instrument">
-			<h3 class="column">
-				<?php echo $fanfaron['Instrument']['name']; ?>
-
-			</h3>
-			<?php
-				foreach($contrats as $contrat) {
-					if($contrat['Instrument'][$instrument_id]['oui'] > 0) {
-						$instru_class = 'ok';
-					}
-					else {
-						$instru_class = 'ko';
-					}
-					?>
-					<span class=<?php echo "column $instru_class "; ?>>
-					<?php
-						echo $contrat['Instrument'][$instrument_id]['oui'];
-						if($contrat['Instrument'][$instrument_id]['peutetre'] > 0) {
-							echo " ( +".$contrat['Instrument'][$fanfaron['Instrument']['id']]['peutetre'].")";
-						}
-					?>
-					</span>
-					<?php
-				}
-			?>
-			<span class="column">
-
-			</span>
-		</div>
+    if ($instrument_counter > 0) {
+?>
+        </div>
+      </details>
+		<?php
+      } // endif
+    ?>
+    <details>
+      <summary>
+        <div class="row instrument">
+          <h3 class="column">
+            <?php echo $fanfaron['Instrument']['name']; ?>
+          </h3>
+            <?php
+              foreach($contrats as $contrat) {
+                if($contrat['Instrument'][$instrument_id]['oui'] > 0) {
+                  $instru_class = 'column ok';
+                }
+                else {
+                  $instru_class = 'column ko';
+                }
+                ?>
+                <span <?php echo "class=\"" . $instru_class . "\""; ?>>
+                <?php
+                  echo $contrat['Instrument'][$instrument_id]['oui'];
+                  if($contrat['Instrument'][$instrument_id]['peutetre'] > 0) {
+                    echo " ( +".$contrat['Instrument'][$fanfaron['Instrument']['id']]['peutetre'].")";
+                  } // end if
+                ?>
+                </span>
+                <?php
+              } // end foreach
+            ?>
+        <span class="column"></span>
+      </div>
+    </summary>
 		<?php
 		$instrument_counter = $fanfaron['Instrument']['id'];
-	}
-?>
+  } // endif
+  ?>
+  <div>
 	<div class="row">
 		<h3 class='column fanfaron'>
 			<?php
@@ -165,5 +172,8 @@ foreach ($fanfarons as $fanfaron):
 			<?php //echo $html->link(__('Modifier', true), array('action'=>'edit', $fanfaron['Fanfaron']['id'])); ?>
 		</span>
 	</div>
+  
 <?php endforeach; ?>
+    </div>
+  </details>
 </div>
