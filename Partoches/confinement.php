@@ -11,7 +11,7 @@
       <br><br>
       <h1>Les Morceaux du confinement</h1>
       <br><br>
-      <a class=menuEntry href="https://drive.google.com/drive/folders/1mY2DXBJBd3nWN55KqDzkBEeg3y5RJbH">Posez vos enregistrements ICI !</a>
+      <a class=menuEntry href="https://drive.google.com/drive/folders/1mY2DXBJBd3nWN55KqDzkBEeg3y5RJbH-">Posez vos enregistrements ICI !</a>
       <br><br>
       <table class=songList>
 <?php
