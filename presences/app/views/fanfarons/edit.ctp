@@ -28,24 +28,28 @@
 			<?php
 			$contrat_title = $contrat['Contrat']['date_debut'];
 			
-			if($contrat['Contrat']['date_debut'] < $contrat['Contrat']['date_fin']) {
-				$contrat_title .= " - ".$contrat['Contrat']['date_fin'];
-			}
+			/* if($contrat['Contrat']['date_debut'] < $contrat['Contrat']['date_fin']) { */
+			/* 	$contrat_title .= " - ".$contrat['Contrat']['date_fin']; */
+			/* } */
 			
-			if($contrat['Contrat']['heure_debut'] != '00:00:00') {
-				$contrat_title .= " (".$contrat['Contrat']['heure_debut'];
+			/* if($contrat['Contrat']['heure_debut'] != '00:00:00') { */
+			/* 	$contrat_title .= " (".$contrat['Contrat']['heure_debut']; */
 			
-				if($contrat['Contrat']['heure_fin'] != '00:00:00') {
-					$contrat_title .= " - ".$contrat['Contrat']['heure_fin'];
-				}
-				$contrat_title .= ")";
-			}
+			/* 	if($contrat['Contrat']['heure_fin'] != '00:00:00') { */
+			/* 		$contrat_title .= " - ".$contrat['Contrat']['heure_fin']; */
+			/* 	} */
+			/* 	$contrat_title .= ")"; */
+			/* } */
+
 			$contrat_title .= " : ".$contrat['Contrat']['title'];
 			
-      echo __($contrat['Contrat']['title'], true);
+      echo __($contrat_title, true);
 			?>
       </summary>
-        <h4> Quand ?</h4>
+      <table>
+      <tr>
+        <th> Quand ?</th>
+          <td>
           <?php
           if($contrat['Contrat']['date_fin'] > $contrat['Contrat']['date_debut']) {
             echo "Du ".$contrat['Contrat']['date_debut']." au ".$contrat['Contrat']['date_fin'];
@@ -60,16 +64,28 @@
             }
           }
           ?>
-        <h4> Lieu </h4>
+          </td>
+        </tr>
+        <tr>
+          <th> Lieu </th>
+          <td>
           <?php echo $contrat['Contrat']['lieu']; ?>
-        <h4> Description </h4>
+          </td>
+        </tr>
+        <tr>
+          <th> Description </th>
+          <td>
           <?php echo $contrat['Contrat']['description']; ?>
-       <h4>
+         </td></tr>
+      </table>
+
+       <br><h4>
 <?php echo $html->link(
   __('Plus de details', true)
   , array('controller' => 'contrats','action'=>'view',$contrat['Contrat']['id'])
   , array('class' => 'buttonLink')); ?>
       </h4>
+
     </details>
 			<?php 
 				echo $form->input(
