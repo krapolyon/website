@@ -80,7 +80,7 @@ h4 {
 	padding-top: 0.5em;
 }
 ul, li {
-	margin: 0 12px;
+	margin: 2px 12px;
   list-style-type: none;
 }
 
@@ -359,16 +359,17 @@ div.actions ul {
 	padding: 0;
 }
 div.actions li {
-	display: inline;
+	/* display: inline; */
 	list-style-type: none;
-	line-height: 2em;
-	margin: 0 2em 0 0;
+	line-height: 3em;
+	margin: 0.2em 2em 0 0;
 	white-space: nowrap;
 }
-div.actions ul li a {
-	color: black;
-	text-decoration: none;
-}
+/* div.actions ul li a { */
+/* 	color: black; */
+/* 	text-decoration: none; */
+/*   font-size:150%; */
+/* } */
 div.actions ul li a:hover {
 	color: #ec1c82;
 	text-decoration: underline;
@@ -520,6 +521,40 @@ td.cache:hover {
 	color:black;
 }
 
+.presents div {
+	clear: both;
+	display: block;
+}
+
+summary {
+	font-size: 18px;
+	padding: 12px;
+	margin: 2px;
+  background: #ffcc33;
+}
+
+summary.contrat {
+	background: #DDFFDD;	
+}
+
+summary.contrat_ko {
+	background: #FFDDDD;	
+}
+
+.presents h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.buttonLink {
+	text-decoration: none;
+	padding: 8px;
+	background: #fff1b3;
+  display: inline-block;
+  font-size: 150%;
+  width: 100%;
+}
+
 /* large screen only part */
 @media only screen and (min-width: 600px) and (min-height: 600px) {
   td.cache:hover span.statut_cache {
@@ -533,25 +568,26 @@ td.cache:hover {
   #content {
     padding: 10px 20px 40px 20px;
   }
-}
 
-summary {
-	font-size: 18px;
-	padding: 12px;
-	/* margin: 4px; */
-  background: #ffcc33;
-  border-style: solid;
-  border-width: 1px;
-}
+  .buttonLink {
+    display: inline;
+    background: inherit;
+  }
 
+  li.buttonLink {
+    float: left;
+  }
 
-.buttonLink {
-	text-decoration: none;
-	padding: 8px;
-	background: #fff1b3;
-	display: inline-block;
-  min-width: inherit;
-  font-size: 150%;
-  border-style: solid;
-  border-width: 1px;
+  details {
+    clear: both;
+  }
+
+  div.actions li {
+	display: inline;
+  }
+
+  .presents {
+    float: left;
+    margin: 10px 20px;
+  }
 }

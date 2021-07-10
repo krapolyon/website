@@ -1,8 +1,3 @@
-<div class="actions">
-	<ul>
-		<li><?php echo $html->link(__('Retour', true), '/'); ?></li>
-	</ul>
-</div>
 <div class="fanfarons form">
 <?php echo $form->create(null, array('url' => array('controller' => 'fanfarons', 'action' => 'edit')));?>
 	<fieldset>

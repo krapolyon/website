@@ -7,17 +7,13 @@ class ContratsController extends AppController {
 
 	function beforeFilter() {
 		// Liste des pages o� l'authentification n'est pas requise
-		$this->Auth->allow(array('view'));
+		$this->Auth->allow(array('view', 'index'));
 	}
 
-	function view($id = null) {
-		if (!$id) {
-			$this->Session->setFlash(__('Invalid Contrat.', true));
-			$this->redirect(array('action'=>'index'));
-		}
-		$this->Contrat->recursive = 0;
-		$this->set('contrat', $this->Contrat->read(null, $id));
+  // méthode interne pour retourner une liste de fanfarons selon leur presences au contrat $id
+  function fanfarons($contratId) {
 
+    $result['valide'] = 1;
 		// Calcul des pr�sents
 		$instrus = $this->Contrat->Fanfaron->Instrument->find("list");
 		foreach($instrus as $instrument_id => $instrument_name) {
@@ -25,7 +21,7 @@ class ContratsController extends AppController {
 			$contrats_fanfarons = $this->Contrat->ContratsFanfaron->find("all",
 				array(
 					"recursive" => 0,
-					"conditions" => "Fanfaron.instrument_id = ".$instrument_id." AND contrat_id=".$id." AND statut='Oui'",
+					"conditions" => "Fanfaron.instrument_id = ".$instrument_id." AND contrat_id=".$contratId." AND statut='Oui'",
   					"order" => 'instrument_id'
 				)
 			);
@@ -34,11 +30,14 @@ class ContratsController extends AppController {
 			$contrats_fanfarons_pe = $this->Contrat->ContratsFanfaron->find("all",
 				array(
 					"recursive" => 0,
-					"conditions" => "Fanfaron.instrument_id = ".$instrument_id." AND contrat_id=".$id." AND statut LIKE 'P%'",
+					"conditions" => "Fanfaron.instrument_id = ".$instrument_id." AND contrat_id=".$contratId." AND statut LIKE 'P%'",
 						"order" => 'instrument_id'
 				)
 			);
 
+      if ($instrument_id != 7 and empty($contrats_fanfarons)) {
+        $result['valide'] = 0;
+      } 
 			foreach($contrats_fanfarons as $contrats_fanfaron) {
 				if(!isset($presents[$instrument_id]['fanfarons'])) {
 					$presents[$instrument_id]['fanfarons'] = $contrats_fanfaron['Fanfaron']['name'];
@@ -56,13 +55,49 @@ class ContratsController extends AppController {
 					 $peutetres[$instrument_id]['fanfarons'] .= ", ".$contrats_fanfaron_pe['Fanfaron']['name'];
 				 }
 			 }
+    }
 
+    $result['presents'] = $presents;
+    $result['peutetres'] = $peutetres;
+    return  $result;
+  }
 
-		}
+  function index() {
+
+		$this->Contrat->recursive = 0;
+		$this->paginate = array(
+					"conditions" => "date_debut>=CURDATE() OR date_fin>=CURDATE()",
+					  "recursive" => 1,
+					  "order" => 'date_debut'
+			);
+		$contrats = $this->paginate();
+
+    $presents = array(-1 => '');
+    $peutetres = array(-1 => '');
+    foreach ($contrats as $contrat) {
+      $id = $contrat['Contrat']['id'];
+      $fanfarons = $this->fanfarons($id);
+      $presents[$id] = $fanfarons['presents'];
+      $peutetres[$id] = $fanfarons['peutetres'];
+      $valide[$id] = $fanfarons['valide'];
+    }
 		$this->set('presents', $presents);
 		$this->set('peutetres', $peutetres);
+    $this->set('contrats', $contrats);
+    $this->set('valide', $valide);
+  }
 
-
+	function view($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid Contrat.', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		$this->Contrat->recursive = 0;
+		$this->set('contrat', $this->Contrat->read(null, $id));
+    
+    $fanfarons = $this->fanfarons($id);
+		$this->set('presents', $fanfarons['presents']);
+		$this->set('peutetres', $fanfarons['peutetres']);
 
 	}
 

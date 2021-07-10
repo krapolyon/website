@@ -1,8 +1,3 @@
-<div class="actions">
-	<ul>
-		<li><?php echo $html->link(__('Retour', true), '/'); ?></li>
-	</ul>
-</div>
 
 <div class="foldableList">
 <h2>Trouves ton nom dans la liste !</h2>

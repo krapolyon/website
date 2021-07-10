@@ -6,7 +6,7 @@ class FanfaronsController extends AppController {
 
 	function beforeFilter() {
 		// Liste des pages o� l'authentification n'est pas requise
-		$this->Auth->allow(array('chooser', 'index', 'edit', 'edit_presence', 'new_presence'));
+		$this->Auth->allow(array('menu', 'index', 'edit', 'edit_presence', 'new_presence'));
 	}
 
 	function index() {
@@ -243,7 +243,7 @@ class FanfaronsController extends AppController {
 		}
 	}
 
-  function chooser() {
+  function menu() {
 		$this->paginate = array(
 					'limit' => 120,
 					'order' => array('Fanfaron.instrument_id' => 'asc','Fanfaron.name' => 'asc')

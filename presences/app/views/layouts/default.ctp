@@ -45,9 +45,6 @@
 			<h1><a href="/presences/"><?php titre_aleatoire(); ?></a></h1>
 		</div>
 		<div id="content">
-			<div style="text-align:left">
-						<a href="https://drive.google.com/drive/folders/1sQhu97O70khdzp4n2_WiZ-kzLT2_Dxve?usp=sharing">Lien vers le drive les gars</a>
-			</div>
 			<div style="text-align:right">
 				<?php
 				if(isset($_SESSION['Auth']['User']['id'])) {
@@ -55,11 +52,9 @@
 					echo $html->link(__('Profil', true), array('controller'=> 'users', 'action'=>'edit', $_SESSION['Auth']['User']['id']))." - ";
 					echo $html->link('Logout', array('controller'=> 'users', 'action'=>'logout'));
 				}
-				else {
-					echo $html->link('Administration', '/admin/');					
-				}
 				 ?>
 			</div>
+
 			<?php
 			if(isset($_SESSION['isAdministrateur']) && $_SESSION['isAdministrateur'] == 1) {
 			?>
@@ -70,6 +65,19 @@
 					</ul>
 				</div>
 				<hr style="background-color:grey;border:0px;height:1px;margin-top:5px;margin-bottom:5px" />
+			<?php
+			}
+      else {
+        ?>
+      <div class="actions">
+        <ul>
+          <li><?php echo $html->link('Administration', '/admin/', array('class' => 'buttonLink')) ?> </li>
+          <li> <a class="buttonLink" href="https://drive.google.com/drive/folders/1sQhu97O70khdzp4n2_WiZ-kzLT2_Dxve?usp=sharing">Lien vers le drive</a> </li>
+          <li><?php echo $html->link(__('Maxi Tableau', true), array( 'controller'=> 'fanfarons', 'action'=>'index'), array( 'class' => 'buttonLink')); ?> </li>
+          <li><?php echo $html->link(__('Contrats', true), array('controller'=> 'contrats', 'action'=>'index'), array( 'class' => 'buttonLink')); ?> </li>
+          <li><?php echo $html->link(__('Fanfarons', true), array('controller'=> 'fanfarons', 'action'=>'menu'), array('class' => 'buttonLink' )); ?> </li>
+        </ul>
+			</div>
 			<?php
 			}
 			$session->flash(); ?>

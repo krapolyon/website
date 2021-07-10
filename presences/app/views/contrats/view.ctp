@@ -1,11 +1,3 @@
-<div class="actions">
-	<ul>
-		<li><?php
-			if(!isset($_SERVER['HTTP_REFERER'])) $_SERVER['HTTP_REFERER'] = "/";
-			echo $html->link(__('Retour', true), $_SERVER['HTTP_REFERER']);
-			?></li>
-	</ul>
-</div>
 <div class="contrats view">
 <h2><?php  __($contrat['Contrat']['title']);?></h2>
 
@@ -47,7 +39,7 @@
 			&nbsp;
 		</p>
 </div>
-<div class="related">
+<div class="presents">
 	<h3><?php __('Pr&eacute;sents');?></h3>
 
 	<?php
@@ -66,8 +58,6 @@
 	}
 	?>
 
-</div>
-<div class="related">
 	<h3><?php __('Peut &ecirc;tre');?></h3>
 
 	<?php
