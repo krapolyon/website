@@ -8,16 +8,14 @@
 </div>
 <div class="contrats view">
 <h2><?php  __($contrat['Contrat']['title']);?></h2>
-	<dl><?php $i = 0; $class = ' class="altrow"';?>
 
-
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('O&ugrave; ?'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+		<h4<?php if ($i % 2 == 0) echo $class;?>><?php __('O&ugrave; ?'); ?></h4>
+		<p<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $contrat['Contrat']['lieu']; ?>
 			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Quand ?'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+		</p>
+		<h4<?php if ($i % 2 == 0) echo $class;?>><?php __('Quand ?'); ?></h4>
+		<p<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php
 			if($contrat['Contrat']['date_fin'] > $contrat['Contrat']['date_debut']) {
 				echo "Du ".$contrat['Contrat']['date_debut']." au ".$contrat['Contrat']['date_fin'];
@@ -32,23 +30,22 @@
 				}
 			}
 			?>
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Des sous ?'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+		</p>
+		<h4<?php if ($i % 2 == 0) echo $class;?>><?php __('Des sous ?'); ?></h4>
+		<p<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $contrat['Contrat']['montant']; ?>
 			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Quelques d&eacute;tails suppl&eacute;mentaires'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+		</p>
+		<h4<?php if ($i % 2 == 0) echo $class;?>><?php __('Quelques d&eacute;tails suppl&eacute;mentaires'); ?></h4>
+		<p<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $contrat['Contrat']['description']; ?>
 			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Th&egrave;me de d&eacute;guiz'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+		</p>
+		<h4<?php if ($i % 2 == 0) echo $class;?>><?php __('Th&egrave;me de d&eacute;guiz'); ?></h4>
+		<p<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $contrat['Contrat']['deguiz']; ?>
 			&nbsp;
-		</dd>
-	</dl>
+		</p>
 </div>
 <div class="related">
 	<h3><?php __('Pr&eacute;sents');?></h3>

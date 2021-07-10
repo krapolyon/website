@@ -81,6 +81,7 @@ h4 {
 }
 ul, li {
 	margin: 0 12px;
+  list-style-type: none;
 }
 
 /* Layout */
@@ -113,7 +114,7 @@ ul, li {
 	background-color: #fff;
 	clear: both;
 	color: #333;
-	padding: 10px 20px 40px 20px;
+	/* padding: 10px 20px 40px 20px; */
 	overflow: auto;
 }
 #footer {
@@ -224,14 +225,14 @@ dd {
 /* Forms */
 form {
 	clear: both;
-	margin-right: 20px;
+	/* margin-right: 20px; */
 	padding: 0;
-	width: 80%;
+	/* width: 80%; */
 }
 fieldset {
 	border: 1px solid #ccc;
 	margin-top: 30px;
-	padding: 16px 20px;
+	/* padding: 16px 20px; */
 }
 fieldset legend {
 	color: #CE6700;
@@ -519,7 +520,8 @@ td.cache:hover {
 	color:black;
 }
 
-@media only screen and (min-width: 600px) {
+/* large screen only part */
+@media only screen and (min-width: 600px) and (min-height: 600px) {
   td.cache:hover span.statut_cache {
     display:inline;
   }
@@ -527,14 +529,21 @@ td.cache:hover {
   td.cache:hover span.statut_visible {
     display:none;
   }
+
+  #content {
+    padding: 10px 20px 40px 20px;
+  }
 }
 
 summary {
 	font-size: 18px;
 	padding: 12px;
-	margin: 4px;
+	/* margin: 4px; */
   background: #ffcc33;
+  border-style: solid;
+  border-width: 1px;
 }
+
 
 .buttonLink {
 	text-decoration: none;
@@ -542,4 +551,7 @@ summary {
 	background: #fff1b3;
 	display: inline-block;
   min-width: inherit;
+  font-size: 150%;
+  border-style: solid;
+  border-width: 1px;
 }
