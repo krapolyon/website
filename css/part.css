@@ -20,6 +20,15 @@ a:hover {
   background-color: #ae2020;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0.5em 0;
+}
+
+ul li {
+  padding: 0.5em 0;
+}
+
 h1, th, .menuEntry{
   color: #ff8e00;
   font-style: italic;

@@ -76,6 +76,7 @@
           <li><?php echo $html->link(__('Maxi Tableau', true), array( 'controller'=> 'fanfarons', 'action'=>'index'), array( 'class' => 'buttonLink')); ?> </li>
           <li><?php echo $html->link(__('Contrats', true), array('controller'=> 'contrats', 'action'=>'index'), array( 'class' => 'buttonLink')); ?> </li>
           <li><?php echo $html->link(__('Fanfarons', true), array('controller'=> 'fanfarons', 'action'=>'menu'), array('class' => 'buttonLink' )); ?> </li>
+          <li> <a class="buttonLink" href="http://krapolyon.free.fr/Partoches">Partoches</a> </li>
         </ul>
 			</div>
 			<?php

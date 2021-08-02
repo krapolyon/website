@@ -152,10 +152,10 @@ class FanfaronsController extends AppController {
 			$this->data['ContratsFanfaron']['statut'] = $statut;
 			$this->data['ContratsFanfaron']['ip'] = $_SERVER['REMOTE_ADDR'];
 			if ($this->Fanfaron->ContratsFanfaron->save($this->data)) {
-				$this->Session->setFlash(__('Statut changé. Merci.', true));
+				$this->Session->setFlash(__('Statut chang&eacute; Merci.', true));
 				$this->redirect(array('action'=>'index'));
 			} else {
-				$this->Session->setFlash(__('Probl�me : statut non chang�', true));
+				$this->Session->setFlash(__('Probl�me : statut non chang&eacute;', true));
 			}
 		}
 	}
@@ -172,10 +172,10 @@ class FanfaronsController extends AppController {
 			$this->data['ContratsFanfaron']['contrat_id'] = $contrat_id;
 			$this->data['ContratsFanfaron']['ip'] = $_SERVER['REMOTE_ADDR'];
 			if ($this->Fanfaron->ContratsFanfaron->save($this->data)) {
-				$this->Session->setFlash(__('Statut changé. Merci.', true));
+				$this->Session->setFlash(__('Statut chang&eacute;. Merci.', true));
 				$this->redirect(array('action'=>'index'));
 			} else {
-				$this->Session->setFlash(__('Probl�me : statut non chang�', true));
+				$this->Session->setFlash(__('Probl�me : statut non chang&eacute;', true));
 			}
 		}
 	}
