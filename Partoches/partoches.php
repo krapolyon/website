@@ -1,5 +1,15 @@
 <?php
 
+$INSTRUS = array(
+    "bs" => "Basse",
+    "sxm" => "Sax Alto",
+    "sxs" => "Sax Tenor",
+    "sb" => "Souba",
+    "tb" => "Trombone",
+    "tbut" => "TromboneUt",
+    "tp" => "Trompette"
+  );
+
 // get document path. First try exact match. If nothing found, try trimming whitespaces and case insensitive.
 // $morceau : base name.
 // $type : directory name. Also used (in lowercase) as file extension.
@@ -7,9 +17,11 @@
 // return : path to a matching file. FALSE if nothing found.
 function getRelativePath($morceau, $type, $instru = FALSE )
 {
+  GLOBAL $INSTRUS;
   $titre = trim($morceau);
   $extension = strtolower($type);
   $path = $instru ?  "$type/$titre-$instru.$extension" : "$type/$titre.$extension";
+  $alternatePath = $instru ?  "$type/$titre-$INSTRUS[$instru].$extension" : "$type/$titre.$extension";
 
   if (is_file($path))
   {
@@ -20,12 +32,13 @@ function getRelativePath($morceau, $type, $instru = FALSE )
     // look in the given directory for a case-insensitive match, ignoring whitespaces.
     $toRemove = '/[_\W]+/';
     $cleanPath = strtolower(preg_replace($toRemove, '', $path));
+    $cleanAlternatePath = strtolower(preg_replace($toRemove, '', $alternatePath));
     // remove '.' and '..'
     $dir_list = array_slice(scandir(__ROOT__."/$type"), 2);
     foreach($dir_list as $file)
     {
       $cleanFile = strtolower(preg_replace($toRemove, '', $file));
-      if (preg_match("/$cleanFile/i", $cleanPath , $matches))
+      if (preg_match("/$cleanFile/i", $cleanPath , $matches) || ($instru && preg_match("/$cleanFile/i", $cleanAlternatePath , $matches)))
       {
         return "$type/$file";
       }
@@ -84,6 +97,8 @@ function loadPartList($inputFile)
 // $inputSongs : array listing parts, formatted as follow: "Title, Artist, youtube.link"
 function displaySongs($inputSongs)
 {
+  GLOBAL $INSTRUS;
+
   echo('
       <thead>
         <tr>
@@ -120,16 +135,7 @@ function displaySongs($inputSongs)
 
     // pdf
     echo('<td>');
-    $instrus = array(
-      "bs" => "Basse",
-      "sxm" => "Sax Alto",
-      "sxs" => "Sax Tenor",
-      "sb" => "Souba",
-      "tb" => "Trombone",
-      "tbut" => "Trombone-ut",
-      "tp" => "Trompette"
-    );
-    foreach($instrus as $code => $name)
+    foreach($INSTRUS as $code => $name)
     {
       echo(getDisplayLink(getPath($partoche[0], "pdf", $code), "$name", "songItem"));
     }
@@ -155,6 +161,7 @@ function pickRandomSongs($songList, $number=1)
  */
 function songSelection($songList, $selectedSong=0, $selectedInstru="bs")
 {
+  GLOBAL $INSTRUS;
   echo("<label for=\"song\"> Morceau : </label>");
   echo("<select name=\"song\">");
   $count = 0;
@@ -175,17 +182,8 @@ function songSelection($songList, $selectedSong=0, $selectedInstru="bs")
   echo("<label for=\"instru\"> Instru : </label>");
   echo("<select name=\"instru\">");
   $count = 0;
-  $instrus = array(
-    "bs" => "Basse",
-    "sxm" => "Sax Alto",
-    "sxs" => "Sax Tenor",
-    "sb" => "Souba",
-    "tb" => "Trombone",
-    "tbut" => "Trombone (ut)",
-    "tp" => "Trompette"
-  );
 
-  foreach($instrus as $code => $name)
+  foreach($INSTRUS as $code => $name)
   {
     echo("<option value=$code");
     if ($code == $selectedInstru)
