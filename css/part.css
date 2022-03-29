@@ -84,6 +84,18 @@ tbody tr td:last-child {
   color:#181c20
 }
 
-select, input {
-  height: 50px;
+input, select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  font-size: large;
+  text-align: center;
+}
+
+label {
+  width: 100%;
+  font-size: x-large;
+  text-align: center;
 }
