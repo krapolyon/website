@@ -18,19 +18,12 @@ a:hover {
 /* menu and title */
 .menu {
   background-color: #ae2020;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0.5em 0;
-}
-
-ul li {
-  padding: 0.5em 0;
+  margin: 2em 0;
+  width: 100%;
 }
 
 h1, th, .menuEntry{
-  color: #ff8e00;
+  color: #ffb200;
   font-style: italic;
   font-variant: normal;
   font-weight: bold;
@@ -38,6 +31,13 @@ h1, th, .menuEntry{
 
 h1, .menuEntry{
   font-size: 20px;
+}
+
+.menuEntry {
+  width: 100%;
+  display: inline-block;
+  padding: 1em;
+  background-color: inherit;
 }
 
 th {
@@ -52,10 +52,10 @@ th {
 }
 
 /* alternate row colors and hover */
-tbody tr:nth-child(odd) {
-  background-color: #ae4040;
+tbody tr:nth-child(odd), .menu a:nth-child(odd) {
+  background-color: #ae3030;
 }
-tbody tr:hover {
+tbody tr:hover, .menu a:hover {
   background-color: #ae6060;
 }
 
@@ -98,4 +98,14 @@ label {
   width: 100%;
   font-size: x-large;
   text-align: center;
+  display: inline-block;
+}
+
+
+/* large screen only part */
+@media only screen and (min-width: 600px) and (orientation: landscape) {
+  .menuEntry {
+    display: inline-block;
+    padding: 0.5em;
+  }
 }

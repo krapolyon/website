@@ -26,12 +26,11 @@
       ?>
         <input type="submit" value="GO">
       </form>
-      <br><br>
-      <a class=menuEntry href="/Partoches/indispensables.php">- Indispensables -</a>
-      <br><br>
-      <a class=menuEntry href="/Partoches/nouveaux.php">- Nouveaut&eacute;s -</a>
-      <br><br>
-      <a class=menuEntry href="http://krapolyon.free.fr">- Site public krapo -</a>
+      <div class=menu>
+        <a class=menuEntry href="../index.htm">Le morceau que vous cherchez n'est pas l&agrave;</a>
+        <a class=menuEntry href="../nouveaux.php">Les nouveaut&eacute;s</a>
+        <a class=menuEntry href="http://krapolyon.free.fr">Aller sur le site public krapo</a>
+      </div>
     </center>
   </body>
 </html>

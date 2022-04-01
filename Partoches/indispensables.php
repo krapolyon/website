@@ -21,14 +21,10 @@
         displaySongs($songs);
       ?>
       </table>
-      <div>
-        <br><br>
-        <a class=menuEntry href="index.htm">- Le morceau que vous cherchez n'est pas l&agrave; -</a>
-        <br><br>
-        <a class=menuEntry href="nouveaux.php">- Les nouveaut&eacute;s -</a>
-        <br><br>
-        <a class=menuEntry href="http://krapolyon.free.fr">- Aller sur le site public krapo -</a>
-        <br><br>
+      <div class=menu>
+        <a class=menuEntry href="index.htm">Le morceau que vous cherchez n'est pas l&agrave;</a>
+        <a class=menuEntry href="nouveaux.php">Les nouveaut&eacute;s</a>
+        <a class=menuEntry href="http://krapolyon.free.fr">Aller sur le site public krapo</a>
       </div>
     </center>
   </body>

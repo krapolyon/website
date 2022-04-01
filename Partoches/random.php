@@ -36,8 +36,10 @@
                   ?>
       </table>
       <br><br>
-      <div>
-        <a class=menuEntry href="index.htm">- Le morceau que vous cherchez n'est pas l&agrave; -</a>
+      <div class=menu>
+        <a class=menuEntry href="index.htm">Le morceau que vous cherchez n'est pas l&agrave; -</a>
+        <a class=menuEntry href="indispensables.php">Les indispensables-</a>
+        <a class=menuEntry href="http://krapolyon.free.fr">Aller sur le site public krapo -</a>
       </div>
     </center>
   </body>

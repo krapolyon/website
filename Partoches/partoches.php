@@ -162,7 +162,7 @@ function pickRandomSongs($songList, $number=1)
 function songSelection($songList, $selectedSong=0, $selectedInstru="bs")
 {
   GLOBAL $INSTRUS;
-  echo("<label for=\"song\"> Morceau : </label>");
+  echo("<label for=\"song\">Morceau</label>");
   echo("<select name=\"song\">");
   $count = 0;
   foreach($songList as $song)
@@ -179,7 +179,7 @@ function songSelection($songList, $selectedSong=0, $selectedInstru="bs")
   echo("</br>");
   echo("</br>");
 
-  echo("<label for=\"instru\"> Instru : </label>");
+  echo("<label for=\"instru\">Instru</label>");
   echo("<select name=\"instru\">");
   $count = 0;
 

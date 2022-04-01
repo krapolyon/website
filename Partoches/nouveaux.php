@@ -20,14 +20,10 @@ $songs = loadPartList(__ROOT__."/nouveaux.csv");
 displaySongs($songs);
 ?>
       </table>
-      <div>
-        <br><br>
-        <a class=menuEntry href="index.htm">- Le morceau que vous cherchez n'est pas l&agrave; -</a>
-        <br><br>
-        <a class=menuEntry href="indispensables.php">- Les indispensables-</a>
-        <br><br>
-        <a class=menuEntry href="http://krapolyon.free.fr">- Aller sur le site public krapo -</a>
-        <br><br>
+      <div class=menu>
+        <a class=menuEntry href="index.htm">Le morceau que vous cherchez n'est pas l&agrave;</a>
+        <a class=menuEntry href="indispensables.php">Les indispensables</a>
+        <a class=menuEntry href="http://krapolyon.free.fr">Aller sur le site public krapo</a>
       </div>
     </center>
   </body>
