@@ -28,6 +28,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<?php echo $html->charset(); ?>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>
 		<?php __('Krap-o-pr&eacute;sences'); ?>
 	</title>
