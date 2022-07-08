@@ -95,7 +95,7 @@ function loadPartList($inputFile)
 
 // display a table containing a list of parts
 // $inputSongs : array listing parts, formatted as follow: "Title, Artist, youtube.link"
-function displaySongs($inputSongs)
+function displaySongs($inputSongs, $ids = array(), $filesLink = true)
 {
   GLOBAL $INSTRUS;
 
@@ -104,14 +104,29 @@ function displaySongs($inputSongs)
         <tr>
           <th>Mais quoi ?</th>
           <th>Et de qui ?</th>
+    ');
+  if ($filesLink)
+  {
+    echo('
           <th>Les bips</th>
           <th>Les boules</th>
           <th>L\'imprimable</th>
+    ');
+  }
+  echo('
         </tr>
       </thead>
   ');
-  foreach($inputSongs as $partoche)
+
+  // if no specific ids specified, show all
+  if (sizeof($ids) == 0)
   {
+    $ids =  range(0, sizeof($inputSongs)-1);
+  }
+
+  foreach($ids as $id)
+  {
+    $partoche = $inputSongs[$id];
     echo('<tr>');
 
     // Youtube link
@@ -121,6 +136,11 @@ function displaySongs($inputSongs)
 
     // artist
     echo('<td><span class=songTitle>' . $partoche[1] . '</span></td>');
+
+    if (!$filesLink)
+    {
+      continue;
+    }
 
     // midi
     echo ('<td>'
@@ -144,16 +164,6 @@ function displaySongs($inputSongs)
     echo('</tr>
       ');
   }
-}
-
-/**
- * Slice $number items out of $songlist and display them.
- */
-function pickRandomSongs($songList, $number=1)
-{
-  shuffle($songList);
-  $extract = array_slice($songList, 0, $number);
-  displaySongs($extract);
 }
 
 /**
