@@ -1,120 +1,343 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="description" content="Les Krapos sont une fanfare lyonnaise, composée de 20 à 30 fanfarons et qui déploie son énergie bondissante à Lyon, aux alentours (Rhône, Ain, Loire) et partout en France."/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Les Krapos - Fanfare amphibienne</title>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <title>Fanfare Krapô</title>
-
-    <!-- Meta Tags -->
-    <meta name="description" content="Fanfare Krapô - La fanfare amphibienne aquatique nocturne - ">
-    <meta name="keywords" content="fanfare, musique, lyon, groupe">
-
-    <link rel="shortcut icon" type="image/x-icon"  href="favicon.ico">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="css/simple-sidebar.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style_global.css">
-    <link rel="stylesheet" href="css/krapo.css">
-    <script src="js/jquery-1.11.2.min.js"></script>
-    <script src="js/slidejs/jquery.slides.min.js"></script>
-    <script src="vomix/jquery.raptorize.1.0.js"></script>
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li><a href="index.html"><img src="img/krapo.png"/></a></li>
-          <!--li><a href="event.html">Evenements</a></li-->
-          <li><a href="repertoire.html">Répertoire</a></li>
-          <li><a href="presta.html">Prestations</a></li>
-          <!--li><a href="trombi.html">Trombi</a></li-->
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="copains.html">Copains</a></li>
-          <li><a href="#" id="vomix">Ne Pas Cliquer</a></li>
-          <li class="container-fluid" style="width:auto;">
-            <a class="col-lg-6" href="https://www.facebook.com/LesKrapos/">
-              <img class="logos" src="/img/facebook.png"/>
-            </a>
-            <a class="col-lg-6" href="https://www.youtube.com/user/fanfarekrapo">
-              <img class="logos" src="/img/youtube.png"/>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div id="page-content-wrapper">
-        <div class="container-fluid">
-          <div class="row" id="name">
-            <div class ="col-lg-3">
-              <h1>
-                <span class="up mark">L</span>ES <span class="up mark">K</span>RAPOS
-              </h1>
-
-              <h2>
-                Fanfare Amphibienne
-              </h2>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap">
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="krapos.css" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <img id="header-logo-img" src="assets/images/common/LogoKrapo 2.svg" alt="Logo Krapo"/>
+            <nav id="header-menu-nav" aria-label="Site menu">
+                <li><a href="#home-page">Accueil</a></li>
+                <li><a href="#media-page">Médias</a></li>
+                <li><a href="#setlist-page">Répertoire</a></li>
+                <li><a href="#friends-page">Copains</a></li>
+                <li><a href="#contact-page">Contact</a></li>
+            </nav>
+            <nav id="header-social-nav" aria-label="Social networks menu">
+                <li><a href="https://www.soundcloud.com/leskrapos"><img src="assets/images/common/social/soundcloud.svg" alt="&Eacutecouter les Krapos sur Soundcloud"></a></li>
+                <li><a href="https://www.facebook.com/LesKrapos"><img src="assets/images/common/social/facebook.svg" alt="Suivre les Krapos sur Facebook"></a></li>
+                <li><a href="https://www.youtube.com/@les-krapos"><img src="assets/images/common/social/youtube.svg" alt="Regarder les Krapos sur Youtube"></a></li>
+                <li><a href="https://www.instagram.com/leskrapos"><img src="assets/images/common/social/instagram.svg" alt="Suivre les Krapos sur Instagram"></a></li>
+            </nav>
+        </header>
+        <!-- Home Page -->
+        <div id="home-page" class="page">
+            <div class="page-header-spacer"></div>
+            <div id="home-page-content" class="page-content">
+                <section id="home-presentation">
+                    <div id="home-presentation-heading">
+                        <h1>Les Krapos</h1>
+                        <a href="" id="listen-button-home" class="button-primary button-listen">&Eacutecouter</a>
+                    </div>
+                    <p id="home-presentation-tagline">Fanfare amphibienne bondissante</p>
+                    <p>Si la fanfare est née en <b>1995</b> sur les bancs de la faculté de médecine de <b>Lyon</b>, les fanfarons des <b>Krapos</b> viennent aujourd'hui d'horizons différents.</p>
+                    <p>Cette joyeuse bande de batraciens se balade donc toujours accompagnée de trompettes, saxophones, trombones, euphoniums, soubas et batterie, pour faire travailler en rythme et en musique les cuisses musclées et dessinées de son croâssant fan club!</p>
+                    <p>Énergie déblatérante, joyeuseté envahissante, rires déplacés et souffle vigoureux se mêlent tant et si bien que, comme on dit, hein, ça expédie du pesant!</p>
+                </section>
+                <section id="home-booking">
+                    <h1>Chez vous ?</h1>
+                    <p>Vous souhaitez booster l'ambiance de votre événement ou de votre établissement avec la musique énergisante des Krapos? Dites-nous tout!</p>
+                    <a id="booking-button-home" class="button-secondary button-send">Demande de devis</a>
+                </section>
+                <div id="home-blob-block" class="blob-block">
+                    <img id="photo-home" class="rounded-img" src="assets/images/home/photo_home.jpg" alt="Abel et Nicard passent un soubassophone au-dessus d'une rivière. Crédit Photo : Les Krapos."/>
+                    <img id="blob-home" class="blob-img" src="assets/images/home/blob_home.svg"/>
+                </div>
             </div>
-            <div class ="col-lg-9">
-              <div id="kraposlide" class="">
-                <img src="img/homepage/krapo1.jpg">
-                <img src="img/homepage/krapo2.jpg">
-                <img src="img/homepage/krapo4.jpg">
-                <img src="img/homepage/krapo6.jpg">
-                <img src="img/homepage/krapo7.jpg">
-                <img src="img/homepage/krapo8.jpg">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <h3><span class="up mark">L</span>A <span
-                        class="up mark">F</span>ANFARE <span
-                        class="up mark">K</span>RAPO,
-              </h3>
-              <p>
-              Conçue en 1995 grâce au prélèvement de tétards sur les bancs de la faculté de médecine de Lyon, la fanfare Krapo, anciennement Crapauds Saint Jacques, est aujourd'hui composée d'une vingtaine de joyeux lurons de tous styles, origines, sexes et rock-nd roll attitude confondus.
-              </p>
-              <p>
-              Que ce soit à Lyon et ses environs, ou partout en France, en Europe et même pourquoi pas dans le monde, les Krapos partagent bien volontiers leur élixir de bonne humeur avec le reste de la planète, ravis de distiller autours de leur mare leurs tubes enivrants dans une humeur bondissante ! Cette bruyante bande de batraciens se ballade donc toujours accompagnée de trompettes, saxophones, trombones, saxbhorn, soubas et batterie, pour faire travailler en rythme et en musique les cuisses musclées et dessinées de son croâssant fan club!
-              </p>
-              <p>
-              Énergie déblatérante, joyeuseté envahissante, rires déplacés et souffle vigoureux se mêlent tant et si bien que, comme on dit, hein, ça expédie du pesant !
-              </p>
-            </div>
-          </div>
-          <br/>
-          <div class="row">
-            <!--iframe width="544" height="306" src="//embedftv-a.akamaihd.net/?ue=f5d88e2ebef2e529ef57087d469a375e" frameborder="0" scrolling="no"></iframe><br /><a href="http://france3-regions.francetvinfo.fr/rhone-alpes/rhone/lyon/les-krapos-ils-jouent-par-tous-les-temps-823021.html" target="_blank">Zoom sur la fanfare des Krapos</a-->
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8 iframe-container">
-              <iframe width="727" height="409" src="https://www.youtube.com/embed/jNbFxIsBrWY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="col-lg-2"></div>
-          </div>
         </div>
-      </div>
-    </div>
-  </body>
-
-  <script>
-    $( document ).ready(function() {
-      $("#kraposlide").slidesjs({
-        play: {
-          active: false,
-          effect: "slide",
-          interval: 4000,
-          auto: true,
-          swap: false,
-          pauseOnHover: false,
-          restartDelay: 4000
-        }
-      });
-
-      $(".slidesjs-navigation").hide();
-      $(".slidesjs-pagination-item").hide();
-      $("#vomix").raptorize();
-    });
-  </script>
+        <!-- Media Page -->
+        <div id="media-page" class="page">
+            <div class="page-header-spacer"></div>
+            <div id="media-page-content" class="page-content">
+                <section id="media-albums">
+                    <div id="media-albums-blob-block" class="blob-block">
+                        <img id="photo-media-1" class="rounded-img" src="assets/images/medias/photo_media_1.jpg" alt="Abel, trompettiste aux lunettes Fantaisie. Crédit Photo : Objectif Images Montpellier."/>
+                        <img id="blob-media-1" class="blob-img" src="assets/images/medias/blob_media_1.svg"/>
+                    </div>
+                    <h1>Les albums</h1>
+                    <p>Comme on est généreux, il y a 3 albums en écoute gratuite sur SoundCloud.</p>
+                    <ol id="media-block-albums">
+                        <li id="media-album-1" class="media-album">
+                            <img class="media-album-img" src="assets/images/medias/soundcloud/mauvaise_copie.jpg"/>
+                            <p class="media-album-title">Mauvaise copie</p>
+                            <p class="media-album-year">2019</p>
+                            <a id="listen-button-album-1" class="button-primary button-listen">&Eacutecouter</a>
+                        </li>
+                        <li id="media-album-2" class="media-album">
+                            <img class="media-album-img" src="assets/images/medias/soundcloud/new_morning.jpg"/>
+                            <p id="title-album-2" class="media-album-title">Live @NewMorning</p>
+                            <p id="year-album-3" class="media-album-year">2016</p>
+                            <a id="listen-button-album-2" class="button-primary button-listen">&Eacutecouter</a>
+                        </li>
+                        <li id="media-album-3" class="media-album">
+                            <img class="media-album-img" src="assets/images/medias/soundcloud/interdits_gymnase.jpg"/>
+                            <p id="title-album-3" class="media-album-title">Interdits de gymnase</p>
+                            <p id="year-album-3" class="media-album-year">2010</p>
+                            <a id="listen-button-album-3" class="button-primary button-listen">&Eacutecouter</a>
+                        </li>
+                    </ol>
+                </section>
+                <section id="media-videos">
+                    <h1>Les vidéos</h1>
+                    <p>Une manière de revoir les Krapos avec des images qui bougent.</p>
+                    <ol id="media-block-videos">
+                        <li id="media-video-1" class="media-video">
+                            <img class="media-video-img" src="assets/images/medias/youtube/toccata.jpg"/>
+                            <div class="media-video-description">
+                                <p class="media-video-title">Toccata</p>
+                                <p class="media-video-year">Fanfa'Rhône 2021</p>
+                                <a id="view-button-video-1" class="button-primary button-view media-video-button">Regarder</a>
+                            </div>
+                        </li>
+                        <li id="media-video-2" class="media-video">
+                            <img class="media-video-img" src="assets/images/medias/youtube/daftpunk.jpg"/>
+                            <div class="media-video-description">
+                                <p class="media-video-title">Medley Daft Punk</p>
+                                <p class="media-video-year">Fanfa'Rhône 2021</p>
+                                <a id="view-button-video-1" class="button-primary button-view media-video-button">Regarder</a>
+                            </div>
+                        </li>
+                    </ol>
+                    <div id="media-videos-blob-block" class="blob-block">
+                        <img id="photo-media-2" class="rounded-img" src="assets/images/medias/photo_media_2.jpg" alt="Nadia, notre tubiste sous la pluie. Crédit Photo : Les Krapos."/>
+                        <img id="blob-media-2" class="blob-img" src="assets/images/medias/blob_media_2.svg"/>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- Setlist Page -->
+        <div id="setlist-page" class="page">
+            <div class="page-header-spacer"></div>
+            <div id="setlist-page-content" class="page-content">
+                <section id="setlist-presentation">
+                    <div id="setlist-blob-block" class="blob-block">
+                        <img id="photo-setlist" class="rounded-img" src="assets/images/repertoire/photo_repertoire.jpg" alt="Illustration : Hawk, batteur concentré en noir et blanc. Crédit Photo : Stan Bonnet.”"/>
+                        <img id="blob-setlist" class="blob-img" src="assets/images/repertoire/blob_repertoire.svg"/>
+                    </div>
+                    <h1>Le répertoire</h1>
+                    <p>Le répertoire varié des Krapos est tourné majoritairement vers le métal et l'électro, qui y côtoient pêle-mêle le disco, la pop ou le classique. Au-delà des tubes connus de tous, les Krapos aiment s'approprier des titres hors des sentiers battus pour les faire découvrir à leur public.</p>
+                </section>
+                <div id="setlist-illustration">
+                    <img src="assets/images/repertoire/nuage_de_mots.png" alt="Liste des artistes du répertoire : Adhesive Wombat, Billie Eilish, Biffy, Knife Party, Jamiroquai, Jain, Daft Punk, Justice, Overwerk, Dalida, Foals, C2C, Ghost in the shell, Erik Satie, Rocky, Bloc Party, Dimmu Borgir, Rammstein, Caravan Palace, The Cure, Claude François, Major Lazer, Jimmy Sommerville, Metallica, Muse, System of a Down, Rodrigo y Gabriela, Anakronic Electro Orkestra, Baby Metal, Supermen Lovers, La femme, Metronomy, AC/DC, Stromae, Carpenter Brut, Mark Ronson, Hypnotic Brass Ensemble, Red Hot Chili Peppers"/>
+                </div>
+            </div>
+        </div>
+        <!-- Friends Page -->
+        <div id="friends-page" class="page">
+            <div class="page-header-spacer"></div>
+            <div id="friends-page-content" class="page-content">
+                <div id="friends-map">
+                    <img src="assets/images/friends/france.svg" />
+                </div>
+                <section id="friends-presentation">
+                    <a href=#friends-page ><h1>Les copains</h1></a>
+                    <p>Au fur et à mesure de nos pérégrinations on s'est fait des copains un peu partout en France, voire même un peu plus loin.</p>
+                    <p>Comme on trouve qu'ils sont eux aussi vachement cool, on te propose d'aller voir leurs sites ouebs aussi.</p>
+                    <p>On t'as oublié ? Laisse-nous un <a href="#contact-page">message</a>, qu'on y remédie !</p>
+                    <section id="friends-region-ARA" class="friends-region">
+                        <h2>Auvergne Rhône-Alpes</h2>
+                        <ol class="friends-region-block">
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/pustule.png"/>
+                                <div class="friends-details-text">
+                                    <p class="friends-name">La Pustule</p>
+                                    <p class="friends-tagline">La fanfare qui décapsule</p>
+                                    <p class="friends-location">Lyon</p>
+                                </div>
+                            </li>
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/lgmx.png" />
+                                <div class="friends-details-text">
+                                    <p class="friends-name">LGMX</p>
+                                    <p class="friends-tagline">Fanfare psychoactive électrostimulante</p>
+                                    <p class="friends-location">Lyon</p>
+                                </div>
+                            </li>
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/ssb.png" />
+                                <div class="friends-details-text">
+                                    <p class="friends-name">Super Smash Brass</p>
+                                    <p class="friends-tagline">Fanfare jeux vidéos</p>
+                                    <p class="friends-location">Lyon</p>
+                                </div>
+                            </li>
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/karlek.png" />
+                                <div class="friends-details-text">
+                                    <p class="friends-name">Kärlek</p>
+                                    <p class="friends-tagline">Reprises Black-Death-Thrash</p>
+                                    <p class="friends-location">Lyon</p>
+                                </div>
+                            </li>
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/fanfat.png" />
+                                <div class="friends-details-text">
+                                    <p class="friends-name">La Fanfat'</p>
+                                    <p class="friends-tagline">La seule fanfare 100% matière grasse. Mais avec des paillettes.</p>
+                                    <p class="friends-location">Lyon</p>
+                                </div>
+                            </li>
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/over_ze_knup.png" />
+                                <div class="friends-details-text">
+                                    <p class="friends-name">Over Ze Knup</p>
+                                    <p class="friends-tagline">Classic & Rock'n'Roll Quatuor sauce Punk'Jazz</p>
+                                    <p class="friends-location">Lyon</p>
+                                </div>
+                            </li>
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/fat_ducks.png" />
+                                <div class="friends-details-text">
+                                    <p class="friends-name">Fat Ducks</p>
+                                    <p class="friends-tagline">Jeune fanfare énergique aux rythmes de funk et d'électro</p>
+                                    <p class="friends-location">Lyon</p>
+                                </div>
+                            </li>
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/canal_chips.png" />
+                                <div class="friends-details-text">
+                                    <p class="friends-name">Canal Chips</p>
+                                    <p class="friends-tagline">Fanfare festive en Drôme-Ardèche</p>
+                                    <p class="friends-location">Valence</p>
+                                </div>
+                            </li>
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/marcel_frontale.png" />
+                                <div class="friends-details-text">
+                                    <p class="friends-name">Marcel Frontale</p>
+                                    <p class="friends-tagline">Fanfare New Orleans</p>
+                                    <p class="friends-location">Lyon</p>
+                                </div>
+                            </li>
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/velcros.png" />
+                                <div class="friends-details-text">
+                                    <p class="friends-name">Velcro's Brass Band</p>
+                                    <p class="friends-tagline">Musique survitaminée</p>
+                                    <p class="friends-location">Lyon</p>
+                                </div>
+                            </li>
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/cacophonie.png" />
+                                <div class="friends-details-text">
+                                    <p class="friends-name">La Cacophonie</p>
+                                    <p class="friends-tagline">Fanfare presqu'écoutable</p>
+                                    <p class="friends-location">Lyon</p>
+                                </div>
+                            </li>
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/pink_it_black.png" />
+                                <div class="friends-details-text">
+                                    <p class="friends-name">Pink It Black</p>
+                                    <p class="friends-tagline">La fanfare en rose et noir</p>
+                                    <p class="friends-location">Grenoble</p>
+                                </div>
+                            </li>
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/38_tonnes.png" />
+                                <div class="friends-details-text">
+                                    <p class="friends-name">38 tonnes</p>
+                                    <p class="friends-tagline"></p>
+                                    <p class="friends-location">Grenoble</p>
+                                </div>
+                            </li>
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/mort_subite.png" />
+                                <div class="friends-details-text">
+                                    <p class="friends-name">La Mort Subite</p>
+                                    <p class="friends-tagline"></p>
+                                    <p class="friends-location">Grenoble</p>
+                                </div>
+                            </li>
+                            <li class="friends-details-block">
+                                <img src="assets/images/friends/ARA/garces_emouchees.png" />
+                                <div class="friends-details-text">
+                                    <p class="friends-name">Les garces embouchées</p>
+                                    <p class="friends-tagline"></p>
+                                    <p class="friends-location">Grenoble</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <!-- Contact Page -->
+        <div id="contact-page" class="page">
+            <div id="contact-page-content" class="page-content">
+                <section id="contact-presentation">
+                    <h1>Contact</h1>
+                    <p>Pour l'établissement d'un devis, merci de répondre au formulaire dédié, c'est le meilleur moyen d'avoir une réponse adaptée.</p>
+                    <p class="centered-paragraph"><a class="button-secondary button-send">Demande de devis</a></p>
+                    <p>Pour nous tagger sur les réseaux sociaux utilise <b>@leskrapos</b> pour insta / Facebook et <b>@les-krapos</b> sur Youtube.</p>
+                    <p>Pour tout autre message, par exemple <b>pour nous inonder d'amour</b>, tu peux utiliser ce formulaire.</p>
+                    <div id="contact-blob-block" class="blob-block">
+                        <img id="photo-contact" class="rounded-img" src="assets/images/contact/photo_contact.jpg" alt="Abel et Nicard passent un soubassophone au-dessus d'une rivière. Crédit Photo : Les Krapos."/>
+                        <img id="blob-contact" class="blob-img" src="assets/images/contact/bloc_contact.svg"/>
+                    </div>
+                </section>
+                <form id="contact-form">
+                    <p><label for="contact-name">Ton p'ti nom</label></p>
+                    <p><input type="text" id="contact-name" name="user_name" maxlength="100"/></p>
+                    <p><label for="contact-mail">Ton email</label></p>
+                    <p><input type="email" id="contact-mail" name="user_email" /></p>
+                    <p><label for="contact-msg">Ton mot d'amour</label></p>
+                    <p><textarea id="contact-msg" name="user_message"></textarea></p>
+                    <p><label><input type="checkbox" name="user_consent" value="false" />Je suis d'accord pour vous filer mes données perso vu que vous n'en ferez pas n'importe quoi.</label></p>
+                    <button id="contact-submit-button" class="button-primary button-send">Envoyer</button>
+                </form>
+            </div>
+        </div>
+        <!-- Booking Page -->
+        <div id="booking-page" class="page">
+            <div id="booking-page-content" class="page-content">
+                <section id="booking-presentation">
+                    <h1>Demande de devis</h1>
+                    <p>Utilisant uniquement des instruments acoustiques, les Krapos proposent une animation musicale acoustique et festive sans besoin d'amplification sonore, qui s'adapte à vos besoins et à vos contraintes.</p>
+                    <p>Nos effectifs peuvent aller de 15 à 20 fanfaron.ne.s selon les disponibilités de chacun.e. Nous préconisons des sets d'environ 45 minutes, avec une pause de 15 minutes minimum entre chaque set.</p>
+                    <p>Grâce à notre répertoire conséquent, avec près d'une cinquantaine de morceaux nous garantissons 3 heures de son sans répétition.</p>
+                    <p>Si la fanfare est basée à Lyon, nous pouvons nous déplacer ailleurs en France, à l'étranger, vers l'infini, au-delà...</p>
+                    <div id="booking-blob-block" class="blob-block">
+                        <img id="photo-booking" class="rounded-img" src="assets/images/quotation/photo_quotation.jpg" alt="Réva, bassiste superstar derrière une forêt de trompettes. Crédit Photo : Gilles Reboisson."/>
+                        <img id="blob-booking" class="blob-img" src="assets/images/quotation/blob_quotation.svg"/>
+                    </div>
+                </section>
+                <form id="booking-form">
+                    <p><label for="booking-name">* Votre nom / Le nom de votre organisme</label></p>
+                    <p><input type="text" id="booking-name" name="user_name" required /></p>
+                    <p><label for="booking-mail">* Votre e-mail</label></p>
+                    <p><input type="email" id="booking-mail" name="user_email" required /></p>
+                    <p><label for="booking-phone">* Un numéro de téléphone où on peut vous joindre</label></p>
+                    <p><input type="tel" id="booking-phone" name="user_phone" required /></p>
+                    <p><label for="booking-msg">* Détaillez-nous votre projet<br>
+                        <ul>
+                            <li>Date</li> 
+                            <li>Temps de jeu, conditions</li>
+                            <li>Budget</li>
+                            <li>Défraiement</li>
+                            <li>Conditions d'accueil (repas, boisson, logement)</li>                    
+                        </ul>
+                    </label></p>
+                    <p><textarea id="booking-msg" name="user_message" required ></textarea></p>
+                    <p><label><input type="checkbox" name="user_consent" value="false" />Je suis d'accord pour vous filer mes données perso vu que vous n'en ferez pas n'importe quoi.</label></p>
+                    <button id="contact-submit-button" class="button-primary button-send">Envoyer</button>
+                </form>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <p>mentions légales</p>
+        </footer>
+    </body>
 </html>
