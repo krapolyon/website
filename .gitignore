@@ -2,3 +2,13 @@ img/
 font/
 fonts/
 
+# Python 
+__pycache__/
+.venv
+
+# Stuff on MacOS...
+.DS_Store
+
+# Temp files
+*~
+
